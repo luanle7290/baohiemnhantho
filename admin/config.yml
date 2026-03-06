@@ -1,0 +1,49 @@
+backend:
+  name: github
+  repo: luanle7290/baohiemnhantho
+  branch: main
+
+publish_mode: simple
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "jobs-data"
+    label: "Danh sach tuyen dung"
+    files:
+
+      - name: "jobs"
+        label: "Cap nhat tuyen dung"
+        file: "data/jobs.json"
+        format: "json"
+        fields:
+
+          - label: "Ngay cap nhat"
+            name: "lastUpdated"
+            widget: "string"
+            hint: "Dinh dang: YYYY-MM-DD, vi du: 2026-03-06"
+
+          - label: "Danh sach cong ty"
+            name: "companies"
+            widget: "list"
+            summary: "{{fields.name}} ({{fields.jobs}} vi tri)"
+            fields:
+              - { label: "ID (khong dau, khong cach)", name: "id", widget: "string", hint: "vi du: prudential, manulife, aia" }
+              - { label: "Ten cong ty", name: "name", widget: "string" }
+              - { label: "Mau brand (hex)", name: "color", widget: "string", hint: "vi du: #E31837" }
+              - { label: "URL trang tuyen dung", name: "careerUrl", widget: "string" }
+              - label: "Danh sach vi tri tuyen dung"
+                name: "jobs"
+                widget: "list"
+                summary: "{{fields.title}} — {{fields.location}}"
+                fields:
+                  - { label: "Ten vi tri", name: "title", widget: "string" }
+                  - { label: "Dia diem", name: "location", widget: "string", hint: "vi du: TP. Ho Chi Minh, Ha Noi" }
+                  - { label: "Ngay dang", name: "posted", widget: "string", hint: "vi du: Hom qua, 3 ngay truoc" }
+                  - label: "Phan loai"
+                    name: "category"
+                    widget: "select"
+                    options:
+                      - { label: "Back Office / Van phong", value: "back-office" }
+                      - { label: "TVV / Dai ly", value: "tvv" }
+                    default: "back-office"
