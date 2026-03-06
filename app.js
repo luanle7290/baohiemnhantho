@@ -130,7 +130,7 @@ function renderOverview() {
 
   content.innerHTML = `
     <div class="overview-header">
-      <div class="overview-title">Tổng quan tuyển dùng Khối Văn Phòng</div>
+      <div class="overview-title">Tổng quan tuyển dụng Khối Văn Phòng</div>
       <div class="overview-sub">Dữ liệu cập nhất ${formatDate(d.lastUpdated)} • Nguồn: trang career chính thức</div>
     </div>
 
@@ -260,7 +260,7 @@ function renderCompany(companyId) {
       <div class="company-header-logo" style="background:${co.color}">${initials}</div>
       <div class="company-header-info">
         <div class="company-header-name">${co.name} Vietnam</div>
-        <div class="company-header-meta">${jobs.length} vị trí Khối Văn Phòng đang tuyển a _ ${co.careerUrl.replace('https://','').split('/')[0]}</div>
+        <div class="company-header-meta">${jobs.length} vị trí Khối Văn Phòng đang tuyển — ${co.careerUrl.replace('https://','').split('/')[0]}</div>
       </div>
       <div class="company-header-cta">
         <a class="btn-apply btn-primary" href="${applyHref}" target="_blank">${applyLabel}</a>
