@@ -6,7 +6,7 @@
 const state = {
   data: null,
   activeCompany: 'all',   // 'all' or company id
-  activeCategory: 'van-phong',
+  activeCategory: 'back-office',
   search: '',
   cityFilter: 'all',
 };
@@ -47,7 +47,7 @@ function init() {
 function buildSidebar() {
   const d = state.data;
   const totalBack = d.companies.reduce((s, c) =>
-    s + c.jobs.filter(j => j.category === 'van-phong').length, 0);
+    s + c.jobs.filter(j => j.category === 'back-office').length, 0);
 
   // "Tổng quát" item
   const allItem = makeNavItem('all', null, 'Tổng quát', totalBack, true);
@@ -113,19 +113,19 @@ function renderOverview() {
   const companies = d.companies;
 
   const totalJobs = companies.reduce((s, c) =>
-    s + c.jobs.filter(j => j.category === 'van-phong').length, 0);
+    s + c.jobs.filter(j => j.category === 'back-office').length, 0);
   const topCo = [...companies].sort((a, b) =>
-    b.jobs.filter(j=>j.category==='van-phong').length -
-    a.jobs.filter(j=>j.category==='van-phong').length)[0];
+    b.jobs.filter(j=>j.category==='back-office').length -
+    a.jobs.filter(j=>j.category==='back-office').length)[0];
   const hanoiJobs = companies.reduce((s, c) =>
-    s + c.jobs.filter(j => j.category==='van-phong' && isHanoi(j.location)).length, 0);
+    s + c.jobs.filter(j => j.category==='back-office' && isHanoi(j.location)).length, 0);
 
   // Filter companies by search
   const sq = state.search.toLowerCase();
   const filteredCos = companies.filter(co => {
     if (!sq) return true;
     return co.jobs.some(j =>
-      j.category === 'van-phong' && j.title.toLowerCase().includes(sq));
+      j.category === 'back-office' && j.title.toLowerCase().includes(sq));
   });
 
   content.innerHTML = `
@@ -144,7 +144,7 @@ function renderOverview() {
         <div class="stat-label">Công ty</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">${topCo.jobs.filter(j=>j.category==='van-phong').length}</div>
+        <div class="stat-num">${topCo.jobs.filter(j=>j.category==='back-office').length}</div>
         <div class="stat-label">${topCo.name} (nhiều nhất)</div>
       </div>
       <div class="stat-card">
@@ -168,7 +168,7 @@ function renderOverview() {
 }
 
 function renderCompanyCard(co) {
-  const jobs = co.jobs.filter(j => j.category === 'van-phong');
+  const jobs = co.jobs.filter(j => j.category === 'back-office');
   const hcmCount = jobs.filter(j => isHCM(j.location)).length;
   const hanoiCount = jobs.filter(j => isHanoi(j.location)).length;
   const otherCount = jobs.length - hcmCount - hanoiCount;
@@ -215,7 +215,7 @@ function renderCompany(companyId) {
   const sq = state.search.toLowerCase();
   const cf = state.cityFilter;
 
-  let jobs = co.jobs.filter(j => j.category === 'van-phong');
+  let jobs = co.jobs.filter(j => j.category === 'back-office');
 
   // Apply city filter
   if (cf === 'hcm') jobs = jobs.filter(j => isHCM(j.location));
