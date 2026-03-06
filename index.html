@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bảo Hiểm Nhân Thọ — Tuyển Dụng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ─── SIDEBAR ─────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <span class="brand-main">BẢO HIỂM</span>
+        <span class="brand-sub">NHÂN THỌ</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section-label">DANH SÁCH CÔNG TY</div>
+    <nav class="sidebar-nav" id="companyNav"></nav>
+
+    <div class="sidebar-footer">
+      <div class="update-info">
+        <span class="update-label">Cập nhật lần cuối</span>
+        <span class="update-date" id="lastUpdated">—</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ─── MAIN AREA ──────────────────────────────────────── -->
+  <div class="main">
+
+    <!-- Tab bar -->
+    <header class="topbar">
+      <div class="tabs">
+        <button class="tab active" data-cat="back-office">
+          💼 Tuyển dụng Back Office
+        </button>
+        <button class="tab" data-cat="tvv">
+          👥 Tuyển dụng Đội ngũ TVV
+        </button>
+      </div>
+      <div class="topbar-right">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Tìm vị trí, kỹ năng..." />
+        </div>
+        <div class="city-filter">
+          <select id="cityFilter" class="city-select">
+            <option value="all">📍 Tất cả địa điểm</option>
+            <option value="hcm">TP. Hồ Chí Minh</option>
+            <option value="hanoi">Hà Nội</option>
+            <option value="other">Tỉnh khác</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content" id="content">
+      <div class="loading">Đang tải dữ liệu...</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
