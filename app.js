@@ -131,7 +131,7 @@ function renderOverview() {
   content.innerHTML = `
     <div class="overview-header">
       <div class="overview-title">Tổng quan tuyển dụng Khối Văn Phòng</div>
-      <div class="overview-sub">Dữ liệu cập nhất ${formatDate(d.lastUpdated)} • Nguồn: trang career chính thức</div>
+      <div class="overview-sub">Dữ liệu cập nhất ${formatDate(d.lastUpdated)} • Nguồn: website của các công ty</div>
     </div>
 
     <div class="stats-row">
@@ -229,7 +229,7 @@ function renderCompany(companyId) {
   }
 
   const initials = co.name.split(' ').map(w=>w[0]).join('').slice(0,3).toUpperCase();
-  const applyLabel = co.applyEmail ? ` ️ G���ni CV qua Email` : '🔗 Trang tuyển dụng';
+  const applyLabel = co.applyEmail ? ` ️ Gửi email đến VN_careers@sunlife.com` : '🔗 Trang tuyển dụng';
   const applyHref = co.applyEmail ? `mailto:${co.applyEmail}` : co.careerUrl;
 
   const tableRows = filteredJobs.length > 0
