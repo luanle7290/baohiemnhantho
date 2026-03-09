@@ -1,43 +1,42 @@
 /* ================================================================
-   Báº£oHiá»mNhÃ¢nThá» â Apple-style Clean Redesign
+   Bảo Hiểm Nhân Thọ — Apple-style Clean Redesign
 ================================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:            #f5f5f7;
-  --surface:       #ffffff;
-  --surface-2:     #fafafa;
-  --border:        #d2d2d7;
-  --border-light:  #e8e8ed;
-
-  --text-1:        #1d1d1f;
-  --text-2:        #6e6e73;
-  --text-3:        #86868b;
-
-  --blue:          #0071e3;
-  --blue-light:    #e8f2ff;
-  --green:         #34c759;
-  --green-light:   #e3f9e5;
-  --orange:        #ff9f0a;
-  --orange-light:  #fff3e0;
-  --purple:        #af52de;
-  --purple-light:  #f3e8ff;
-
-  --sidebar-w:     220px;
-  --radius-sm:     8px;
-  --radius-md:     12px;
-  --radius-lg:     16px;
-
-  --shadow-xs:     0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-sm:     0 2px 8px rgba(0,0,0,0.08);
-  --shadow-md:     0 4px 20px rgba(0,0,0,0.10);
-
-  --font:          -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
-  --font-display:  -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
-  --transition:    0.18s cubic-bezier(0.4,0,0.2,1);
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --border: #d2d2d7;
+  --border-light: #e8e8ed;
+  --text-1: #1d1d1f;
+  --text-2: #6e6e73;
+  --text-3: #86868b;
+  --blue: #0071e3;
+  --blue-light: #e8f2ff;
+  --green: #34c759;
+  --green-light: #e3f9e5;
+  --orange: #ff9f0a;
+  --orange-light: #fff3e0;
+  --purple: #af52de;
+  --purple-light: #f3e8ff;
+  --sidebar-w: 220px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+  
+  /* Font sửa lại: dùng Inter hỗ trợ tốt tiếng Việt + fallback an toàn */
+  --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --transition: 0.18s cubic-bezier(0.4,0,0.2,1);
 }
 
 html, body { height: 100%; }
+
 body {
   font-family: var(--font);
   background: var(--bg);
@@ -46,10 +45,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ââ APP SHELL âââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── APP SHELL ──────────────────────────────────────────────────────────────── */
 .app { display: flex; height: 100vh; width: 100vw; }
 
-/* ââ SIDEBAR âââââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── SIDEBAR ────────────────────────────────────────────────────────────────── */
 .sidebar {
   width: var(--sidebar-w);
   min-width: var(--sidebar-w);
@@ -75,7 +74,7 @@ body {
 .brand-icon { font-size: 24px; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-main { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: var(--text-1); }
-.brand-sub  { font-size: 10px; font-weight: 500; letter-spacing: 0.04em; color: var(--text-3); }
+.brand-sub { font-size: 10px; font-weight: 500; letter-spacing: 0.04em; color: var(--text-3); }
 
 /* Section label */
 .sidebar-section-label {
@@ -108,10 +107,9 @@ body {
   font-weight: 500;
   user-select: none;
 }
-.nav-item:hover  { background: var(--bg); color: var(--text-1); }
+.nav-item:hover { background: var(--bg); color: var(--text-1); }
 .nav-item.active { background: var(--blue-light); color: var(--blue); }
 .nav-item.active .nav-badge { background: var(--blue); color: #fff; }
-
 .company-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .nav-label { flex: 1; }
 .nav-badge {
@@ -129,12 +127,12 @@ body {
 .sidebar-footer { padding: 14px 18px; border-top: 1px solid var(--border-light); }
 .update-info { display: flex; flex-direction: column; gap: 2px; }
 .update-label { font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em; }
-.update-date  { font-size: 12px; font-weight: 600; color: var(--text-2); }
+.update-date { font-size: 12px; font-weight: 600; color: var(--text-2); }
 
-/* ââ MAIN ââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── MAIN ───────────────────────────────────────────────────────────────────── */
 .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: var(--bg); }
 
-/* ââ TOPBAR ââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── TOPBAR ─────────────────────────────────────────────────────────────────── */
 .topbar {
   display: flex;
   align-items: center;
@@ -158,11 +156,9 @@ body {
   cursor: pointer;
   transition: background var(--transition), color var(--transition);
 }
-.tab:hover  { background: var(--bg); color: var(--text-1); }
+.tab:hover { background: var(--bg); color: var(--text-1); }
 .tab.active { background: var(--blue-light); color: var(--blue); font-weight: 600; }
-
 .topbar-right { display: flex; align-items: center; gap: 8px; margin-left: auto; }
-
 .search-wrap {
   display: flex;
   align-items: center;
@@ -177,7 +173,7 @@ body {
   border-color: var(--blue);
   box-shadow: 0 0 0 3px rgba(0,113,227,0.12);
 }
-.search-icon  { font-size: 12px; color: var(--text-3); }
+.search-icon { font-size: 12px; color: var(--text-3); }
 .search-input {
   background: transparent;
   border: none;
@@ -188,7 +184,6 @@ body {
   width: 180px;
 }
 .search-input::placeholder { color: var(--text-3); }
-
 .city-select {
   background: var(--bg);
   border: 1px solid var(--border);
@@ -207,7 +202,7 @@ body {
 }
 .city-select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,113,227,0.12); }
 
-/* ââ CONTENT âââââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── CONTENT ────────────────────────────────────────────────────────────────── */
 .content {
   flex: 1;
   overflow-y: auto;
@@ -217,10 +212,9 @@ body {
 }
 .content::-webkit-scrollbar { width: 5px; }
 .content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
-
 .loading { text-align: center; padding: 80px; color: var(--text-3); font-size: 14px; }
 
-/* ââ OVERVIEW ââââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── OVERVIEW ───────────────────────────────────────────────────────────────── */
 .overview-header { margin-bottom: 24px; }
 .overview-title {
   font-family: var(--font-display);
@@ -303,12 +297,10 @@ body {
   flex-shrink: 0;
 }
 .company-card-name { font-size: 15px; font-weight: 600; color: var(--text-1); }
-.company-card-url  { font-size: 11px; color: var(--text-3); margin-top: 2px; }
-
+.company-card-url { font-size: 11px; color: var(--text-3); margin-top: 2px; }
 .company-card-stats { margin-bottom: 12px; }
-.cstat-num   { font-size: 22px; font-weight: 700; color: var(--text-1); }
+.cstat-num { font-size: 22px; font-weight: 700; color: var(--text-1); }
 .cstat-label { font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em; }
-
 .city-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
 .city-pill {
   font-size: 11px;
@@ -331,7 +323,7 @@ body {
 .cta-link { color: var(--blue); font-weight: 600; font-size: 12px; text-decoration: none; }
 .cta-link:hover { text-decoration: underline; }
 
-/* ââ COMPANY DETAIL ââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── COMPANY DETAIL ─────────────────────────────────────────────────────────── */
 .company-header {
   display: flex;
   align-items: center;
@@ -358,8 +350,7 @@ body {
 .company-header-info { flex: 1; }
 .company-header-name { font-size: 18px; font-weight: 700; color: var(--text-1); }
 .company-header-meta { font-size: 12px; color: var(--text-3); margin-top: 2px; }
-.company-header-cta  { margin-left: auto; }
-
+.company-header-cta { margin-left: auto; }
 .btn-apply {
   padding: 8px 18px;
   border-radius: var(--radius-md);
@@ -375,7 +366,7 @@ body {
   border: none;
 }
 .btn-apply:hover { opacity: 0.85; transform: translateY(-1px); }
-.btn-primary   { background: var(--blue); color: white; }
+.btn-primary { background: var(--blue); color: white; }
 .btn-secondary { background: var(--bg); color: var(--text-1); border: 1px solid var(--border); }
 
 /* Results count */
@@ -408,9 +399,8 @@ body {
   color: var(--text-1);
 }
 .job-table tbody tr:last-child td { border-bottom: none; }
-.job-table tbody tr:hover td      { background: var(--bg); }
-
-.job-num   { color: var(--text-3); font-size: 12px; width: 36px; }
+.job-table tbody tr:hover td { background: var(--bg); }
+.job-num { color: var(--text-3); font-size: 12px; width: 36px; }
 .job-title { font-weight: 500; max-width: 380px; }
 .job-title mark {
   background: rgba(255,159,10,0.15);
@@ -431,9 +421,8 @@ body {
   color: var(--text-2);
   border: 1px solid var(--border-light);
 }
-.location-badge.hanoi  { background: var(--green-light);  color: #1a7f37; border-color: transparent; }
-.location-badge.other  { background: var(--purple-light); color: #7c3aed; border-color: transparent; }
-
+.location-badge.hanoi { background: var(--green-light); color: #1a7f37; border-color: transparent; }
+.location-badge.other { background: var(--purple-light); color: #7c3aed; border-color: transparent; }
 .job-posted { white-space: nowrap; color: var(--text-3); font-size: 12px; }
 .job-apply-link {
   display: inline-flex;
@@ -453,9 +442,9 @@ body {
 
 /* Empty state */
 .empty-state { text-align: center; padding: 60px 20px; color: var(--text-3); }
-.empty-icon  { font-size: 36px; margin-bottom: 12px; }
-.empty-text  { font-size: 15px; color: var(--text-2); font-weight: 500; }
-.empty-sub   { font-size: 13px; margin-top: 6px; }
+.empty-icon { font-size: 36px; margin-bottom: 12px; }
+.empty-text { font-size: 15px; color: var(--text-2); font-weight: 500; }
+.empty-sub { font-size: 13px; margin-top: 6px; }
 
 /* Coming soon */
 .coming-soon {
@@ -467,16 +456,16 @@ body {
   gap: 12px;
   color: var(--text-3);
 }
-.coming-soon-icon  { font-size: 48px; }
+.coming-soon-icon { font-size: 48px; }
 .coming-soon-title { font-size: 18px; font-weight: 600; color: var(--text-2); }
-.coming-soon-sub   { font-size: 13px; max-width: 340px; text-align: center; line-height: 1.6; }
+.coming-soon-sub { font-size: 13px; max-width: 340px; text-align: center; line-height: 1.6; }
 
-/* ââ SCROLLBAR âââââââââââââââââââââââââââââââââââââââââââââââââ */
-::-webkit-scrollbar       { width: 5px; height: 5px; }
+/* ── SCROLLBAR ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
 
-/* ââ RESPONSIVE ââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ── RESPONSIVE ─────────────────────────────────────────────────────────────── */
 @media (max-width: 800px) {
   .app { flex-direction: column; }
   .sidebar { width: 100%; min-width: unset; height: auto; flex-direction: row; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--border-light); }
@@ -487,7 +476,7 @@ body {
   .topbar-right { width: 100%; }
   .search-input { width: 140px; }
   .company-grid { grid-template-columns: 1fr; }
-  body  { overflow: auto; }
+  body { overflow: auto; }
   .main { overflow: visible; }
   .content { overflow: visible; padding: 16px; }
 }
