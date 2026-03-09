@@ -1,8 +1,8 @@
 /* ================================================================
-   Báº£oHiá»mNhÃ¢nThá» â App Logic
+   BảoHiểmNhânThọ — App Logic
    ================================================================ */
 
-// âââ STATE ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── STATE ──────────────────────────────────────────────────────
 const state = {
   data: null,
   activeCompany: 'all',   // 'all' or company id
@@ -11,7 +11,7 @@ const state = {
   cityFilter: 'all',
 };
 
-// âââ ELEMENTS âââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── ELEMENTS ───────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 const companyNav   = $('companyNav');
 const content      = $('content');
@@ -19,7 +19,7 @@ const lastUpdated  = $('lastUpdated');
 const searchInput  = $('searchInput');
 const cityFilter   = $('cityFilter');
 
-// âââ LOAD DATA ââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── LOAD DATA ──────────────────────────────────────────────────
 async function loadData() {
   try {
     const res = await fetch('data/jobs.json');
@@ -27,14 +27,14 @@ async function loadData() {
     init();
   } catch (e) {
     content.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">â ï¸</div>
-      <div class="empty-text">KhÃ´ng thá» táº£i dá»¯ liá»u</div>
-      <div class="empty-sub">Vui lÃ²ng má» file qua web server hoáº·c kiá»m tra file data/jobs.json</div>
+      <div class="empty-icon">⚠️</div>
+      <div class="empty-text">Không thể tải dữ liệu</div>
+      <div class="empty-sub">Vui lòng mở file qua web server hoặc kiểm tra file data/jobs.json</div>
     </div>`;
   }
 }
 
-// âââ INIT âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── INIT ───────────────────────────────────────────────────────
 function init() {
   const d = state.data;
   lastUpdated.textContent = formatDate(d.lastUpdated);
@@ -43,14 +43,14 @@ function init() {
   bindEvents();
 }
 
-// âââ SIDEBAR ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── SIDEBAR ────────────────────────────────────────────────────
 function buildSidebar() {
   const d = state.data;
   const totalBack = d.companies.reduce((s, c) =>
     s + c.jobs.filter(j => j.category === 'back-office').length, 0);
 
-  // "Tá»ng quÃ¡t" item
-  const allItem = makeNavItem('all', null, 'Tá»ng quÃ¡t', totalBack, true);
+  // "Tổng quát" item
+  const allItem = makeNavItem('all', null, 'Tổng quát', totalBack, true);
   companyNav.appendChild(allItem);
 
   // Company items
@@ -91,7 +91,7 @@ function updateSidebarCounts() {
   });
 }
 
-// âââ RENDER âââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── RENDER ─────────────────────────────────────────────────────
 function render() {
   if (!state.data) return;
 
@@ -130,26 +130,26 @@ function renderOverview() {
 
   content.innerHTML = `
     <div class="overview-header">
-      <div class="overview-title">Tá»ng quan tuyá»n dá»¥ng Back Office</div>
-      <div class="overview-sub">Dá»¯ liá»u cáº­p nháº­t ${formatDate(d.lastUpdated)} â¢ Nguá»n: trang career chÃ­nh thá»©c</div>
+      <div class="overview-title">Tổng quan tuyển dụng Back Office</div>
+      <div class="overview-sub">Dữ liệu cập nhật ${formatDate(d.lastUpdated)} • Nguồn: trang career chính thức</div>
     </div>
 
     <div class="stats-row">
       <div class="stat-card">
         <div class="stat-num">${totalJobs}</div>
-        <div class="stat-label">Tá»ng vá» trÃ­</div>
+        <div class="stat-label">Tổng vị trí</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">${companies.length}</div>
-        <div class="stat-label">CÃ´ng ty</div>
+        <div class="stat-label">Công ty</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">${topCo.jobs.filter(j=>j.category==='back-office').length}</div>
-        <div class="stat-label">${topCo.name} (nhiá»u nháº¥t)</div>
+        <div class="stat-label">${topCo.name} (nhiều nhất)</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">${hanoiJobs}</div>
-        <div class="stat-label">Táº¡i HÃ  Ná»i</div>
+        <div class="stat-label">Tại Hà Nội</div>
       </div>
     </div>
 
@@ -174,13 +174,13 @@ function renderCompanyCard(co) {
   const otherCount = jobs.length - hcmCount - hanoiCount;
 
   const cityPills = [
-    hcmCount ? `<span class="city-pill">ðï¸ HCM: ${hcmCount}</span>` : '',
-    hanoiCount ? `<span class="city-pill" style="background:rgba(52,211,153,0.15);color:#6ee7b7">ð¿ HÃ  Ná»i: ${hanoiCount}</span>` : '',
-    otherCount ? `<span class="city-pill" style="background:rgba(139,92,246,0.15);color:#c4b5fd">ð Tá»nh khÃ¡c: ${otherCount}</span>` : '',
+    hcmCount ? `<span class="city-pill">🏙️ HCM: ${hcmCount}</span>` : '',
+    hanoiCount ? `<span class="city-pill" style="background:rgba(52,211,153,0.15);color:#6ee7b7">🌿 Hà Nội: ${hanoiCount}</span>` : '',
+    otherCount ? `<span class="city-pill" style="background:rgba(139,92,246,0.15);color:#c4b5fd">📍 Tỉnh khác: ${otherCount}</span>` : '',
   ].filter(Boolean).join('');
 
   const initials = co.name.split(' ').map(w=>w[0]).join('').slice(0,3).toUpperCase();
-  const applyLabel = co.applyEmail ? `âï¸ ${co.applyEmail}` : 'ð Xem táº¥t cáº£ vá» trÃ­';
+  const applyLabel = co.applyEmail ? `✉️ ${co.applyEmail}` : '🔗 Xem tất cả vị trí';
   const applyHref = co.applyEmail ? `mailto:${co.applyEmail}` : co.careerUrl;
 
   return `
@@ -195,12 +195,12 @@ function renderCompanyCard(co) {
       <div class="company-card-stats">
         <div class="cstat">
           <div class="cstat-num">${jobs.length}</div>
-          <div class="cstat-label">Vá» trÃ­</div>
+          <div class="cstat-label">Vị trí</div>
         </div>
       </div>
-      <div class="city-pills">${jobs.length === 0 ? '<span class="city-pill" style="color:var(--text-3);font-style:italic">ChÆ°a cÃ³ vá» trÃ­</span>' : (cityPills || '<span class="city-pill">â</span>')}</div>
+      <div class="city-pills">${jobs.length === 0 ? '<span class="city-pill" style="color:var(--text-3);font-style:italic">Chưa có vị trí</span>' : (cityPills || '<span class="city-pill">—</span>')}</div>
       <div class="company-card-cta">
-        <span>Click Äá» xem chi tiáº¿t â</span>
+        <span>Click để xem chi tiết →</span>
         <a class="cta-link" href="${applyHref}" target="_blank" onclick="event.stopPropagation()">${applyLabel}</a>
       </div>
     </div>
@@ -229,7 +229,7 @@ function renderCompany(companyId) {
   }
 
   const initials = co.name.split(' ').map(w=>w[0]).join('').slice(0,3).toUpperCase();
-  const applyLabel = co.applyEmail ? `âï¸ Gá»­i CV qua Email` : 'ð Trang tuyá»n dá»¥ng';
+  const applyLabel = co.applyEmail ? `✉️ Gửi CV qua Email` : '🔗 Trang tuyển dụng';
   const applyHref = co.applyEmail ? `mailto:${co.applyEmail}` : co.careerUrl;
 
   // If company has no jobs at all, show "no positions" notice
@@ -239,16 +239,16 @@ function renderCompany(companyId) {
         <div class="company-header-logo" style="background:${co.color}">${initials}</div>
         <div class="company-header-info">
           <div class="company-header-name">${co.name} Vietnam</div>
-          <div class="company-header-meta">ChÆ°a cÃ³ vá» trÃ­ tuyá»n dá»¥ng â¢ ${co.careerUrl.replace('https://','').split('/')[0]}</div>
+          <div class="company-header-meta">Chưa có vị trí tuyển dụng • ${co.careerUrl.replace('https://','').split('/')[0]}</div>
         </div>
         <div class="company-header-cta">
           <a class="btn-apply btn-primary" href="${applyHref}" target="_blank">${applyLabel}</a>
         </div>
       </div>
       <div class="empty-state" style="margin-top:40px">
-        <div class="empty-icon">ð</div>
-        <div class="empty-text">Hiá»n chÆ°a cÃ³ vá» trÃ­ ÄÄng tuyá»n</div>
-        <div class="empty-sub">Vui lÃ²ng theo dÃµi trang tuyá»n dá»¥ng Äá» cáº­p nháº­t thÃ´ng tin má»i nháº¥t.</div>
+        <div class="empty-icon">📋</div>
+        <div class="empty-text">Hiện chưa có vị trí đăng tuyển</div>
+        <div class="empty-sub">Vui lòng theo dõi trang tuyển dụng để cập nhật thông tin mới nhất.</div>
       </div>`;
     return;
   }
@@ -263,16 +263,16 @@ function renderCompany(companyId) {
           <tr>
             <td class="job-num">${i+1}</td>
             <td class="job-title">${titleHl}</td>
-            <td class="job-location"><span class="location-badge ${locClass}">ð ${j.location}</span></td>
+            <td class="job-location"><span class="location-badge ${locClass}">📍 ${j.location}</span></td>
             <td class="job-posted">${j.posted}</td>
-            <td><a class="job-apply-link" href="${co.careerUrl}" target="_blank">á»¨ng tuyá»n â</a></td>
+            <td><a class="job-apply-link" href="${co.careerUrl}" target="_blank">Ứng tuyển →</a></td>
           </tr>`;
       }).join('')
     : `<tr><td colspan="5">
         <div class="empty-state">
-          <div class="empty-icon">ð</div>
-          <div class="empty-text">KhÃ´ng tÃ¬m tháº¥y vá» trÃ­ nÃ o</div>
-          <div class="empty-sub">Thá»­ thay Äá»i bá» lá»c hoáº·c tá»« khÃ³a tÃ¬m kiáº¿m</div>
+          <div class="empty-icon">🔍</div>
+          <div class="empty-text">Không tìm thấy vị trí nào</div>
+          <div class="empty-sub">Thử thay đổi bộ lọc hoặc từ khóa tìm kiếm</div>
         </div>
        </td></tr>`;
 
@@ -281,24 +281,24 @@ function renderCompany(companyId) {
       <div class="company-header-logo" style="background:${co.color}">${initials}</div>
       <div class="company-header-info">
         <div class="company-header-name">${co.name} Vietnam</div>
-        <div class="company-header-meta">${jobs.length} vá» trÃ­ Back Office Äang tuyá»n â¢ ${co.careerUrl.replace('https://','').split('/')[0]}</div>
+        <div class="company-header-meta">${jobs.length} vị trí Back Office đang tuyển • ${co.careerUrl.replace('https://','').split('/')[0]}</div>
       </div>
       <div class="company-header-cta">
         <a class="btn-apply btn-primary" href="${applyHref}" target="_blank">${applyLabel}</a>
       </div>
     </div>
 
-    <div class="results-count">Hiá»n thá» ${filteredJobs.length} / ${jobs.length} vá» trÃ­${sq ? ` cho tá»« khÃ³a "<strong>${sq}</strong>"` : ''}</div>
+    <div class="results-count">Hiển thệ ${filteredJobs.length} / ${jobs.length} vị trí${sq ? ` cho từ khóa "<strong>${sq}</strong>"` : ''}</div>
 
     <div class="job-table-wrap">
       <table class="job-table">
         <thead>
           <tr>
             <th>#</th>
-            <th>Vá» trÃ­ tuyá»n dá»¥ng</th>
-            <th>Äá»a Äiá»m</th>
-            <th>ÄÄng</th>
-            <th>á»¨ng tuyá»n</th>
+            <th>Vị trí tuyển dụng</th>
+            <th>Địa điểm</th>
+            <th>Đăng</th>
+            <th>Ứng tuyển</th>
           </tr>
         </thead>
         <tbody>${tableRows}</tbody>
@@ -310,17 +310,17 @@ function renderCompany(companyId) {
 function renderTVV() {
   content.innerHTML = `
     <div class="coming-soon">
-      <div class="coming-soon-icon">ð¥</div>
-      <div class="coming-soon-title">Äá»i ngÅ© TVV â Sáº¯p ra máº¯t</div>
+      <div class="coming-soon-icon">👥</div>
+      <div class="coming-soon-title">Đội ngũ TVV — Sắp ra mắt</div>
       <div class="coming-soon-sub">
-        Má»¥c Tuyá»n dá»¥ng TÆ° váº¥n viÃªn (TVV) Äang ÄÆ°á»£c xã¢y dá»±ng.
-        Vui lÃ²ng quay láº¡i sau hoáº·c liÃªn há» trá»±c tiáº¿p trang tuyá»n dá»¥ng cá»§a tá»«ng cÃ´ng ty.
+        Mục Tuyển dụng Tư vấn viên (TVV) đang được xây dựng.
+        Vui lòng quay lại sau hoặc liên hệ trực tiếp trang tuyển dụng của từng công ty.
       </div>
     </div>
   `;
 }
 
-// âââ EVENTS âââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── EVENTS ─────────────────────────────────────────────────────
 function bindEvents() {
   // Sidebar company nav
   companyNav.addEventListener('click', e => {
@@ -366,21 +366,21 @@ function selectCompany(id) {
   render();
 }
 
-// âââ HELPERS ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── HELPERS ────────────────────────────────────────────────────
 function isHCM(loc) {
   if (!loc) return false;
   const l = loc.toLowerCase();
-  return l.includes('há» chÃ­ minh') || l.includes('hcm') || l.includes('ho chi minh');
+  return l.includes('hồ chí minh') || l.includes('hcm') || l.includes('ho chi minh');
 }
 
 function isHanoi(loc) {
   if (!loc) return false;
   const l = loc.toLowerCase();
-  return l.includes('hÃ  ná»i') || l.includes('hanoi') || l.includes('ha noi');
+  return l.includes('hà nội') || l.includes('hanoi') || l.includes('ha noi');
 }
 
 function formatDate(dateStr) {
-  if (!dateStr) return 'â';
+  if (!dateStr) return '—';
   try {
     const [y, m, d] = dateStr.split('-');
     return `${d}/${m}/${y}`;
@@ -391,5 +391,5 @@ function escapeRe(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// âââ BOOT âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── BOOT ───────────────────────────────────────────────────
 loadData();
