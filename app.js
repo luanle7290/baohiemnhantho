@@ -119,6 +119,8 @@ function renderOverview() {
     a.jobs.filter(j=>j.category==='back-office').length)[0];
   const hanoiJobs = companies.reduce((s, c) =>
     s + c.jobs.filter(j => j.category==='back-office' && isHanoi(j.location)).length, 0);
+  const hcmJobs = companies.reduce((s, c) =>
+    s + c.jobs.filter(j => j.category==='back-office' && isHCM(j.location)).length, 0);
 
   // Filter companies by search
   const sq = state.search.toLowerCase();
@@ -144,8 +146,8 @@ function renderOverview() {
         <div class="stat-label">Công ty</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">${topCo.jobs.filter(j=>j.category==='back-office').length}</div>
-        <div class="stat-label">${topCo.name} (nhiều nhất)</div>
+        <div class="stat-num">${hcmJobs}</div>
+        <div class="stat-label">Tại TP. Hồ Chí Minh</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">${hanoiJobs}</div>
@@ -288,7 +290,7 @@ function renderCompany(companyId) {
       </div>
     </div>
 
-    <div class="results-count">Hiển thệ ${filteredJobs.length} / ${jobs.length} vị trí${sq ? ` cho từ khóa "<strong>${sq}</strong>"` : ''}</div>
+    <div class="results-count">Hiển thị ${filteredJobs.length} / ${jobs.length} vị trí${sq ? ` cho từ khóa "<strong>${sq}</strong>"` : ''}</div>
 
     <div class="job-table-wrap">
       <table class="job-table">
@@ -391,5 +393,5 @@ function escapeRe(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// ─── BOOT ───────────────────────────────────────────────────
+// ─── BOOT ───────────────────────────────────────────────────────
 loadData();
