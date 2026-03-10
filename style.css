@@ -6,20 +6,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --teal-900: #080e1e;
-  --teal-800: #0f1e3d;
-  --teal-700: #1a3060;
-  --teal-600: #1e3a72;
-  --teal-500: #2a4f9a;
-  --teal-300: #5b82c4;
-  --teal-100: #c8d8f0;
+  --teal-900: #080d1a;
+  --teal-800: #0f172a;
+  --teal-700: #1e293b;
+  --teal-600: #253347;
+  --teal-500: #2d4060;
+  --teal-300: #60a5fa;
+  --teal-100: #e2e8f0;
   --sidebar-w: 230px;
   --white: #ffffff;
-  --off-white: #f4f8fa;
-  --text-dark: #0d1b2e;
-  --text-mid: #4a6080;
-  --text-light: #8aaac8;
-  --gold: #f0b429;
+  --off-white: #f1f5f9;
+  --text-dark: #0f172a;
+  --text-mid: #64748b;
+  --text-light: #94a3b8;
+  --gold: #f59e0b;
   --green: #22c55e;
   --red: #ef4444;
   --radius-sm: 6px;
@@ -243,8 +243,8 @@ body { font-family: var(--font); background: var(--teal-800); color: var(--white
   margin-bottom: 28px;
 }
 .stat-card {
-  background: rgba(255,255,255,0.13);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: #1e293b;
+  border: 1px solid rgba(59,130,246,0.15);
   border-radius: var(--radius-lg);
   padding: 16px 18px;
   text-align: center;
@@ -260,8 +260,8 @@ body { font-family: var(--font); background: var(--teal-800); color: var(--white
   gap: 14px;
 }
 .company-card {
-  background: rgba(255,255,255,0.11);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid rgba(100,116,139,0.25);
   border-radius: var(--radius-lg);
   padding: 18px 20px;
   cursor: pointer;
