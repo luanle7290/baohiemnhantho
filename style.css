@@ -1,24 +1,24 @@
 /* ================================================================
    BảoHiểmNhânThọ — Main Stylesheet
-   Theme: Teal dark (matching mockup design)
+   Theme: Navy dark
    ================================================================ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --teal-900: #0a4f65;
-  --teal-800: #0d6480;
-  --teal-700: #0e6b87;
-  --teal-600: #1279a0;
-  --teal-500: #1a8cb8;
-  --teal-300: #4db8d8;
-  --teal-100: #d0eef7;
+  --teal-900: #0b1120;
+  --teal-800: #0f172a;
+  --teal-700: #1e2a45;
+  --teal-600: #243352;
+  --teal-500: #2d4068;
+  --teal-300: #4a6fa5;
+  --teal-100: #c8d8f0;
   --sidebar-w: 230px;
   --white: #ffffff;
   --off-white: #f4f8fa;
-  --text-dark: #0d3344;
-  --text-mid: #3d6575;
-  --text-light: #7aa8ba;
+  --text-dark: #0d1b2e;
+  --text-mid: #4a6080;
+  --text-light: #8aaac8;
   --gold: #f0b429;
   --green: #22c55e;
   --red: #ef4444;
