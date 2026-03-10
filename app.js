@@ -234,9 +234,12 @@ function renderCompany(companyId) {
   const applyLabel = co.applyEmail ? `✉️ Gửi CV qua Email` : '🔗 Trang tuyển dụng';
   const applyHref = co.applyEmail ? `mailto:${co.applyEmail}` : co.careerUrl;
 
+  const backBtn = `<button class="btn-back mobile-only" onclick="selectCompany('all')">← Quay lại</button>`;
+
   // If company has no jobs at all, show "no positions" notice
   if (co.jobs.length === 0) {
     content.innerHTML = `
+      ${backBtn}
       <div class="company-header">
         <div class="company-header-logo" style="background:${co.color}">${initials}</div>
         <div class="company-header-info">
@@ -279,6 +282,7 @@ function renderCompany(companyId) {
        </td></tr>`;
 
   content.innerHTML = `
+    ${backBtn}
     <div class="company-header">
       <div class="company-header-logo" style="background:${co.color}">${initials}</div>
       <div class="company-header-info">
