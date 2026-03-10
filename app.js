@@ -133,7 +133,7 @@ function renderOverview() {
   content.innerHTML = `
     <div class="overview-header">
       <div class="overview-title">Tổng quan tuyển dụng Khối văn phòng</div>
-      <div class="overview-sub">Dữ liệu cập nhật ${formatDate(d.lastUpdated)} • Nguồn: Tại website chính thức của các công ty.Thông tin được cập nhật hàng tuần. </div>
+      <div class="overview-sub">Dữ liệu cập nhật ${formatDate(d.lastUpdated)} • Nguồn: Tại website chính thức của các công ty.Thông tin được cập nhật hàng tuần.</div>
     </div>
 
     <div class="stats-row">
