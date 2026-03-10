@@ -6,12 +6,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --teal-900: #0b1120;
-  --teal-800: #0f172a;
-  --teal-700: #1e2a45;
-  --teal-600: #243352;
-  --teal-500: #2d4068;
-  --teal-300: #4a6fa5;
+  --teal-900: #080e1e;
+  --teal-800: #0f1e3d;
+  --teal-700: #1a3060;
+  --teal-600: #1e3a72;
+  --teal-500: #2a4f9a;
+  --teal-300: #5b82c4;
   --teal-100: #c8d8f0;
   --sidebar-w: 230px;
   --white: #ffffff;
@@ -243,8 +243,8 @@ body { font-family: var(--font); background: var(--teal-800); color: var(--white
   margin-bottom: 28px;
 }
 .stat-card {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.13);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: var(--radius-lg);
   padding: 16px 18px;
   text-align: center;
@@ -260,8 +260,8 @@ body { font-family: var(--font); background: var(--teal-800); color: var(--white
   gap: 14px;
 }
 .company-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.11);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: var(--radius-lg);
   padding: 18px 20px;
   cursor: pointer;
