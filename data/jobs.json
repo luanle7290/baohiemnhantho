@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-09",
+  "lastUpdated": "2026-03-11",
   "companies": [
     {
       "id": "prudential",
@@ -1240,6 +1240,144 @@
           "title": "IT Business Analyst",
           "location": "TP. Hồ Chí Minh",
           "posted": "28/01/2026",
+          "category": "back-office"
+        }
+      ]
+    },
+    {
+      "id": "phuhunglife",
+      "name": "Phú Hưng Life",
+      "logo": "https://www.phuhunglife.com/favicon.ico",
+      "website": "https://www.phuhunglife.com",
+      "careerUrl": "https://www.phuhunglife.com/vn/tuyen-dung/",
+      "jobs": [
+        {
+          "title": "IFRS17_Application Development Supervisor / Giám sát Phát triển Ứng dụng_Dự án IFRS17",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Đăng 35 ngày trước",
+          "category": "back-office"
+        },
+        {
+          "title": "IFRS17_Actuarial Specialist / Chuyên viên Định phí_Dự án IFRS17",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Đăng 35 ngày trước",
+          "category": "back-office"
+        },
+        {
+          "title": "Head of New Business and Underwriting / Giám Đốc Thẩm định và Phát hành HĐ",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Đăng 35 ngày trước",
+          "category": "back-office"
+        },
+        {
+          "title": "Financial Planning and Analysis Manager / Trưởng Phòng Kế Hoạch và Phân tích Tài chính",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Đăng 35 ngày trước",
+          "category": "back-office"
+        },
+        {
+          "title": "Accounting Specialist / Chuyên viên Kế Toán",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Đăng 12 ngày trước",
+          "category": "back-office"
+        },
+        {
+          "title": "Personal Assistant / Trợ lý Tổng Giám Đốc",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Đăng 48 ngày trước",
+          "category": "back-office"
+        },
+        {
+          "title": "Agency Compensation Assistant Manager / Phó phòng Quản lý Thu nhập Kinh doanh Đại lý",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Đăng 47 ngày trước",
+          "category": "back-office"
+        },
+        {
+          "title": "Customer Marketing (Up to Senior Manager) / Trưởng phòng Tiếp thị Khách hàng",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Đăng 34 ngày trước",
+          "category": "back-office"
+        },
+        {
+          "title": "Digital Marketing Assistant Manager / Phó phòng Tiếp thị trực tuyến",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Đăng 34 ngày trước",
+          "category": "back-office"
+        }
+      ]
+    },
+    {
+      "id": "bidvmetlife",
+      "name": "BIDV MetLife",
+      "logo": "https://www.metlifecareers.com/favicon.ico",
+      "website": "https://www.bidvmetlife.com.vn",
+      "careerUrl": "https://www.metlifecareers.com/en_US/ml/SearchJobs?12310=116567&listFilterMode=1",
+      "jobs": [
+        {
+          "title": "Deputy Sales Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "27-Feb-2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Deputy Sales Manager",
+          "location": "Đà Nẵng",
+          "posted": "02-Mar-2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Distribution Compliance Executive",
+          "location": "Hà Nội",
+          "posted": "06-Feb-2026",
+          "category": "back-office"
+        },
+        {
+          "title": "IT Infrastructure Engineer",
+          "location": "Hà Nội",
+          "posted": "09-Dec-2025",
+          "category": "back-office"
+        }
+      ]
+    },
+    {
+      "id": "cathaylife",
+      "name": "Cathay Life",
+      "logo": "https://www.cathaylife.com.vn/favicon.ico",
+      "website": "https://www.cathaylife.com.vn",
+      "careerUrl": "https://www.cathaylife.com.vn/cathay/recruitment-hr",
+      "jobs": [
+        {
+          "title": "Bác Sĩ Thẩm Định",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Lập Trình Viên Java",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        }
+      ]
+    },
+    {
+      "id": "fubonlife",
+      "name": "Fubon Life",
+      "logo": "https://www.fubonlife.com.vn/favicon.ico",
+      "website": "https://www.fubonlife.com.vn",
+      "careerUrl": "https://www.fubonlife.com.vn/recruitment.html?tab=7&cateId=4",
+      "jobs": [
+        {
+          "title": "Reporting And Valuation Actuary Specialist",
+          "location": "Hà Nội",
+          "posted": "26/02/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Giám đốc Kinh doanh Vùng Cấp Cao",
+          "location": "Toàn quốc",
+          "posted": "",
           "category": "back-office"
         }
       ]
