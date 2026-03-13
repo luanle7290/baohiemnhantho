@@ -200,7 +200,122 @@
       "name": "Manulife",
       "color": "#00A758",
       "careerUrl": "https://careers.manulife.com/global/en/search-results",
-      "jobs": []
+      "jobs": [
+        {
+          "title": "Business System Analyst",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "05/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Project Lead",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "05/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Backend Software Developer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "05/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Infrastructure Engineer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "05/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Assistant Manager, Full Stack Software Engineer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "09/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Assistant Manager – Healthcare Claims",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "22/01/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Manager, New Business",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "27/01/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Data Scientist (Gen AI)",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "12/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Head of Digital Excellence & Platforms",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "12/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Senior Manager, Risk Management",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "06/02/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "MANULIFE FUTURE LEADERS (M-FLs) Vietnam 2026",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "09/02/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Compliance Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "09/02/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Sales Manager, Bancassurance",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "09/02/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Risk & Control Assistant Manager (Partnership Distribution)",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "09/02/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Digital Paid Media & SEO Senior Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "06/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Assistant Manager, PD Compensation & Campaign Management",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "06/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Assistant Manager, Talent Acquisition",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "05/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Chief Product Officer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "09/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Customer Support Senior Associate",
+          "location": "Hà Nam",
+          "posted": "04/03/2026",
+          "category": "back-office"
+        }
+      ]
     },
     {
       "id": "aia",
@@ -541,123 +656,9 @@
       "careerUrl": "https://generali.talent.vn/",
       "jobs": [
         {
-          "title": "Join our Talent network",
-          "location": "CHÚNG TÔI LÀ GENERALI VIỆT NAM",
-          "posted": "Generali Việt Nam là thành viên của Generali, tập đoàn bảo hiểm và quản lý tài sản hàng đầu thế giới đến từ Italia. Chúng tôi quan tâm đến cuộc sống và ước mơ của bạn, hỗ trợ bạn xây dựng tương lai an yên bền vững, cùng nhau lan tỏa niềm vui hạnh phúc đến xung quanh.",
-          "category": "back-office"
-        },
-        {
-          "title": "Bề dày lịch sử 189 năm",
-          "location": "Có mặt tại 50 quốc gia",
-          "posted": "Tập đoàn Bảo hiểm Tốt Nhất Thế giới (Forbes 2019)",
-          "category": "back-office"
-        },
-        {
-          "title": "Có mặt tại 50 quốc gia",
-          "location": "Tập đoàn Bảo hiểm Tốt Nhất Thế giới (Forbes 2019)",
-          "posted": "Generali",
-          "category": "back-office"
-        },
-        {
-          "title": "Tập đoàn Bảo hiểm Tốt Nhất Thế giới (Forbes 2019)",
-          "location": "Generali",
-          "posted": "Việt Nam",
-          "category": "back-office"
-        },
-        {
-          "title": "Top 10 Công ty có Nguồn Nhân lực Hạnh phúc (Anphabe 2020)",
-          "location": "600 nhân viên khắp cả nước",
-          "posted": "Hơn 60 văn phòng trên toàn quốc & 20.000 tư vấn viên",
-          "category": "back-office"
-        },
-        {
-          "title": "600 nhân viên khắp cả nước",
-          "location": "Hơn 60 văn phòng trên toàn quốc & 20.000 tư vấn viên",
-          "posted": "Khám phá Generali Việt Nam",
-          "category": "back-office"
-        },
-        {
-          "title": "Hơn 60 văn phòng trên toàn quốc & 20.000 tư vấn viên",
-          "location": "Khám phá Generali Việt Nam",
-          "posted": "HƠN CẢ MỘT NƠI ĐỂ LÀM VIỆC",
-          "category": "back-office"
-        },
-        {
-          "title": "HƠN CẢ MỘT NƠI ĐỂ LÀM VIỆC",
-          "location": "Tìm kiếm một nơi bạn có thể đạt được nhiều hơn là những thành tựu công việc?",
-          "posted": "Cùng khám phá ngay xem Generali Việt Nam còn điều gì đáng mong chờ!",
-          "category": "back-office"
-        },
-        {
-          "title": "Một nơi để HỌC HỎI",
-          "location": "Với môi trường làm việc gắn kết và đầy năng động.",
-          "posted": "Văn hóa \"SOHI\" – Simplification, Ownership, Innovation và Human Touch giúp chúng tôi sẵn sàng chấp nhận thử thách, học hỏi lẫn nhau và tạo nên thành quả xuất sắc.",
-          "category": "back-office"
-        },
-        {
-          "title": "Với môi trường làm việc gắn kết và đầy năng động.",
-          "location": "Văn hóa \"SOHI\" – Simplification, Ownership, Innovation và Human Touch giúp chúng tôi sẵn sàng chấp nhận thử thách, học hỏi lẫn nhau và tạo nên thành quả xuất sắc.",
-          "posted": "Một nơi để PHÁT TRIỂN",
-          "category": "back-office"
-        },
-        {
-          "title": "Văn hóa \"SOHI\" – Simplification, Ownership, Innovation và Human Touch giúp chúng tôi sẵn sàng chấp nhận thử thách, học hỏi lẫn nhau và tạo nên thành quả xuất sắc.",
-          "location": "Một nơi để PHÁT TRIỂN",
-          "posted": "Với định hướng rõ ràng thiết kế cho từng cá nhân.",
-          "category": "back-office"
-        },
-        {
-          "title": "Một nơi để PHÁT TRIỂN",
-          "location": "Với định hướng rõ ràng thiết kế cho từng cá nhân.",
-          "posted": "Bất cứ ai cũng đều có thể tiếp cận với những chương trình đào tạo và cơ hội học hỏi từ cả trong lẫn ngoài nước để thúc đẩy bản thân mình phát triển toàn diện, vượt trội.",
-          "category": "back-office"
-        },
-        {
-          "title": "Với định hướng rõ ràng thiết kế cho từng cá nhân.",
-          "location": "Bất cứ ai cũng đều có thể tiếp cận với những chương trình đào tạo và cơ hội học hỏi từ cả trong lẫn ngoài nước để thúc đẩy bản thân mình phát triển toàn diện, vượt trội.",
-          "posted": "Một nơi để VUI SỐNG",
-          "category": "back-office"
-        },
-        {
-          "title": "Bất cứ ai cũng đều có thể tiếp cận với những chương trình đào tạo và cơ hội học hỏi từ cả trong lẫn ngoài nước để thúc đẩy bản thân mình phát triển toàn diện, vượt trội.",
-          "location": "Một nơi để VUI SỐNG",
-          "posted": "Với những đãi ngộ và hoạt động gắn kết phong phú.",
-          "category": "back-office"
-        },
-        {
-          "title": "Một nơi để VUI SỐNG",
-          "location": "Với những đãi ngộ và hoạt động gắn kết phong phú.",
-          "posted": "Chất lượng trải nghiệm nhân viên được đảm bảo qua những điều đơn giản và nhỏ nhặt nhất. Chúng tôi muốn bạn cảm thấy hạnh phúc và được trân trọng tại đây.",
-          "category": "back-office"
-        },
-        {
-          "title": "Với những đãi ngộ và hoạt động gắn kết phong phú.",
-          "location": "Chất lượng trải nghiệm nhân viên được đảm bảo qua những điều đơn giản và nhỏ nhặt nhất. Chúng tôi muốn bạn cảm thấy hạnh phúc và được trân trọng tại đây.",
-          "posted": "Một nơi để TỰ HÀO",
-          "category": "back-office"
-        },
-        {
-          "title": "Chất lượng trải nghiệm nhân viên được đảm bảo qua những điều đơn giản và nhỏ nhặt nhất. Chúng tôi muốn bạn cảm thấy hạnh phúc và được trân trọng tại đây.",
-          "location": "Một nơi để TỰ HÀO",
-          "posted": "Với đa dạng cơ hội đóng góp cho cộng đồng.",
-          "category": "back-office"
-        },
-        {
-          "title": "Một nơi để TỰ HÀO",
-          "location": "Với đa dạng cơ hội đóng góp cho cộng đồng.",
-          "posted": "Cùng nhau, chúng tôi luôn nỗ lực khai thác tiềm năng ngành bảo hiểm và đề cao tinh thần cộng đồng, mang đến những giá trị nhân văn ý nghĩa tới khách hàng và xã hội.",
-          "category": "back-office"
-        },
-        {
-          "title": "Với đa dạng cơ hội đóng góp cho cộng đồng.",
-          "location": "Cùng nhau, chúng tôi luôn nỗ lực khai thác tiềm năng ngành bảo hiểm và đề cao tinh thần cộng đồng, mang đến những giá trị nhân văn ý nghĩa tới khách hàng và xã hội.",
-          "posted": "Tìm hiểu thêm",
-          "category": "back-office"
-        },
-        {
-          "title": "Cùng nhau, chúng tôi luôn nỗ lực khai thác tiềm năng ngành bảo hiểm và đề cao tinh thần cộng đồng, mang đến những giá trị nhân văn ý nghĩa tới khách hàng và xã hội.",
-          "location": "Tìm hiểu thêm",
-          "posted": "CƠ HỘI NGHỀ NGHIỆP",
+          "title": "Claim Assessor (Supervisor/ Manager)",
+          "location": "Generali Plaza",
+          "posted": "26/03/2026",
           "category": "back-office"
         }
       ]
@@ -1045,93 +1046,93 @@
       "careerUrl": "https://tuyendung.mblife.vn/tim-viec-lam/tat-ca-viec-lam/vi",
       "jobs": [
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "[Khối Đại lý] Chuyên viên cao cấp Digital Marketing",
+          "location": "Hà Nội",
+          "posted": "30/04/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "[OP] Claims Officer (Assessor)",
+          "location": "Hà Nội",
+          "posted": "31/05/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "Business Analyst (Data/BI/Big Data)",
+          "location": "Hà Nội",
+          "posted": "31/05/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "Data Engineer",
+          "location": "Hà Nội",
+          "posted": "31/05/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "Data Governance",
+          "location": "Hà Nội",
+          "posted": "31/05/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "[Digital] Product Owner",
+          "location": "Hà Nội",
+          "posted": "31/05/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "Legal Counsel",
+          "location": "Hà Nội",
+          "posted": "31/05/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "Chuyên viên cao cấp Phát triển Đối tác",
+          "location": "Hà Nội",
+          "posted": "31/05/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "Deputy Manager of Partnership Development",
+          "location": "Hà Nội",
+          "posted": "31/05/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "Senior English Interpreter",
+          "location": "Hà Nội",
+          "posted": "31/03/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "[Văn Phòng Công Ty] Trợ Lý Ban Điều Hành",
+          "location": "Hà Nội",
+          "posted": "31/03/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "Marketing Manager",
+          "location": "Hà Nội",
+          "posted": "31/03/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "Senior Operational Risk Officer",
+          "location": "Hà Nội",
+          "posted": "31/03/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hà Nội",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "[Actuary Dept.] Senior Pricing Actuary",
+          "location": "Hà Nội",
+          "posted": "31/03/2026",
           "category": "back-office"
         },
         {
-          "title": "Nơi làm việc: Hải Phòng",
-          "location": "Không rõ",
-          "posted": "",
+          "title": "[Văn phòng Công ty] Chuyên viên Hành chính - Lễ tân (Hải Phòng)",
+          "location": "Hải Phòng",
+          "posted": "31/03/2026",
           "category": "back-office"
         }
       ]
@@ -1141,7 +1142,122 @@
       "name": "Hanwha Life",
       "color": "#FF6600",
       "careerUrl": "https://hanwhalife.talent.vn/",
-      "jobs": []
+      "jobs": [
+        {
+          "title": "Assistant to Deputy CEO - Distribution Channels",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Employer Brand Officer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Leadership & Talent Development Assistant Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Customer Services Staff (Outsourcing contract)",
+          "location": "Khánh Hòa",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "HR Operations Senior Executive",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Multimedia Designer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Policy Services Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "HR Operations Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Call Center Senior Staff",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Graphic Designer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Agency Compliance Executive",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Policy Services Senior Executive (Temporary 6 months)",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Policy Services Officer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Head of Sales Training Delivery",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Customer Services Staff (Outsourcing contract)",
+          "location": "Bình Dương",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "HRBP Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Agency Compliance Assistant Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Customer Services Staff (Outsourcing contract)",
+          "location": "Phú Thọ",
+          "posted": "",
+          "category": "back-office"
+        },
+        {
+          "title": "Regional Director (Builder)",
+          "location": "Cà Mau",
+          "posted": "",
+          "category": "back-office"
+        }
+      ]
     },
     {
       "id": "maplife",
