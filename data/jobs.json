@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-13",
+  "lastUpdated": "2026-03-16",
   "companies": [
     {
       "id": "prudential",
@@ -424,13 +424,13 @@
         {
           "title": "Thực tập sinh Ban Kinh doanh",
           "location": "TP. Hồ Chí Minh",
-          "posted": "Hạn: 31/03/2026",
+          "posted": "31/03/2026",
           "category": "back-office"
         },
         {
           "title": "Chuyên viên Tư vấn Tài chính",
           "location": "TP. Hồ Chí Minh",
-          "posted": "Hạn: 31/03/2026",
+          "posted": "31/03/2026",
           "category": "back-office"
         }
       ]
@@ -443,165 +443,136 @@
       "applyEmail": "VN_careers@sunlife.com",
       "jobs": [
         {
-          "title": "CEO's Office",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Executive"
-        },
-        {
           "title": "Chief Agency Officer",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Executive"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Chief Actuary",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Executive"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Chief Information and Digital Officer",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Executive"
+          "posted": "",
+          "category": "back-office"
         },
         {
-          "title": "Chief Client & Marketing Officer Bancassurance",
+          "title": "Chief Client & Marketing Officer",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Bancassurance"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Area Director - ACB Account",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Bancassurance"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Associate Director, Bancassurance Quality Assurance",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Bancassurance"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Supervisor, Administration & Licensing",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Operations"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Principal Data Engineer",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "IT"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Senior Quality Engineer",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "IT"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Principal Developer, Digital Platforms Delivery",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "IT"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Manager, Information Security and IT Governance",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "IT"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Representative, Client Services",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Operations"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Account Manager",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Operations"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Associate Director, Compliance",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Compliance"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Senior Manager, Compliance",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Compliance"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Senior Specialist, Compliance",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Compliance"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Associate Director, HR Operations",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "HR"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Manager, HR Operations",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "HR"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Manager, Talent Acquisition",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "HR"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Associate Director, Agency Recruitment",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Agency"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Senior Manager, Business Strategy",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Strategy"
+          "posted": "",
+          "category": "back-office"
         },
         {
           "title": "Associate Manager, Investment Research",
           "location": "TP. Hồ Chí Minh",
-          "posted": "—",
-          "category": "back-office",
-          "department": "Investment"
+          "posted": "",
+          "category": "back-office"
         }
       ]
     },
