@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-16",
+  "lastUpdated": "2026-03-17",
   "companies": [
     {
       "id": "prudential",
@@ -8,189 +8,231 @@
       "careerUrl": "https://prudential.wd3.myworkdayjobs.com/prudential?locationCountry=79af2e2c3c1f4247a4bc4f7182b1c396&locationHierarchy1=db69e8c8446c11de98360015c5e6daf6",
       "jobs": [
         {
-          "title": "Financial Risk Manager (Quản lý Quản trị rủi ro tài chính)",
-          "location": "Không rõ",
-          "posted": "Hà Nội",
+          "title": "RED+ Business Development Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Intern - Operations & Performance Analytics",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Audit Intern",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Customer Strategy & Segmentation Lead (Trưởng nhóm Chiến lược & Phân khúc Khách hàng)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Financial Reporting Senior Actuarial Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Government Relations Senior Manager (Quản lý Cấp cao Bộ Phận Quan Hệ Đối Ngoại)",
-          "location": "Không rõ",
-          "posted": "Hà Nội",
+          "title": "Digital Transformation Senior Specialist",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Head of Account Management (Giám Đốc Phát Triển Kinh Doanh Kênh Hợp Tác))",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Training Manager",
+          "location": "Cần Thơ",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "eLearning Instructional Design Senior Specialist",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "Corporate Strategy Senior Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "Agent Design & Development Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "Senior Data Engineer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "IT Business Analysis Senior Specialist",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "Software Senior Engineer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "Agency Leaders Design & Development Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "Customer Strategy & Segmentation Lead",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "Government Relations Senior Manager",
+          "location": "Hà Nội",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "Head of Account Management",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
           "title": "Creative Digital Transformation Snr. Specialist",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Claim Assessment Senior Manager (Quản lý Cấp cao Dịch vụ Thẩm định Bồi thường)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Claim Assessment Senior Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Financial Business Partner Senior Manager (Quản lý Cấp cao Phân tích Tài chính)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Financial Business Partner Senior Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
           "title": "Digital Customer Engagement Senior Specialist",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "RED+ Business Development Manager",
-          "location": "Không rõ",
-          "posted": "PVA | The Gallarie - HCMC",
+          "title": "RED+ Business Development Manager (PVA/HCMC)",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Senior Manager, HR Operations and Technology",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Senior Manager HR Operations and Technology",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Head of Technology Risk Management (Giám Đốc Quản Lý Rủi Ro CNTT)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Head of Technology Risk Management",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Project Manager (Quản lý Dự án)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Project Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Senior Program Manager (Quản Lý Cấp Cao Dự Án)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Senior Program Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Contact Center Manager (Quản Lý Tổng Đài Dịch Vụ Khách Hàng)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Contact Center Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Planning & Portfolio Management Manager",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Contact Center Specialist",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Contact Center Specialist (Chuyên viên Tổng đài Dịch vụ Khách hàng)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Contact Center Senior Specialist",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Contact Center Senior Specialist (Chuyên viên Cấp cao Tổng đài Dịch vụ Khách hàng)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "AI Engineer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "AI Engineer (Kỹ sư AI)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Actuarial Senior Analyst",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Actuarial Senior Analyst (Chuyên viên cấp cao Định phí Bảo hiểm)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Agency Communication Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Agency Communication Manager (Quản Lý Truyền Thông Kênh Đại Lý)",
-          "location": "Không rõ",
-          "posted": "2 Locations",
+          "title": "Senior Manager HR Business Partner",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Corporate Strategy Senior Manager (Quản lý Cấp cao Chiến lược Doanh nghiệp)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Senior Data Engineer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Senior Manager, HR Business Partner",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "AML & Sanctions Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Senior Data Engineer (Kỹ sư Dữ liệu Cấp cao)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Marketing & Social Media Senior Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "DevOps Senior Engineer (Kỹ sư Cấp cao Triển khai và Vận hành)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Design Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "AML & Sanctions Manager (Quản lý Phòng chống rửa tiền)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Program Delivery Lead",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Marketing & Social Media Senior Manager (Quản Lý Cấp Cao Các Kênh Truyền Thông Marketing)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "Head of PD Business Planning",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         },
         {
-          "title": "Design Manager (Quản Lý Thiết Kế Đồ Họa)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
-          "category": "back-office"
-        },
-        {
-          "title": "Program Delivery Lead, Customer Strategy & Lifetime Value (Quản lý Cấp cao dự án, Chiến lược Khách hàng & Giá trị vòng đời Khách hàng)",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
-          "category": "back-office"
-        },
-        {
-          "title": "Head of PD Business Planning cum Proposition Development",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
-          "category": "back-office"
-        },
-        {
-          "title": "GA Administration and Transformation Senior Manager (Quản Lý Cấp Cao",
-          "location": "Không rõ",
-          "posted": "Thành phố Hồ Chí Minh",
+          "title": "GA Administration and Transformation Senior Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         }
       ]
@@ -1003,9 +1045,27 @@
       "careerUrl": "https://fa-ewgu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/jobs?location=Ho+Chi+Minh%2C+Viet+Nam&locationId=100000005999917&locationLevel=state&mode=location",
       "jobs": [
         {
+          "title": "[Chubb Life] Agency Recruitment (Outsourced)",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "[Chubb Life] Specialist, Event Activation (Outsourced Contract)",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
           "title": "Head of Digital & Partnerships",
           "location": "TP. Hồ Chí Minh",
-          "posted": "",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "[Chubb Life] Clerk, C&B Support (3M Outsourced Contract)",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
           "category": "back-office"
         }
       ]
