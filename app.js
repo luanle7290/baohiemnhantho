@@ -6,7 +6,6 @@
 const state = {
   data: null,
   activeCompany: 'all',   // 'all' or company id
-  activeCategory: 'back-office',
   search: '',
   cityFilter: 'all',
 };
@@ -46,17 +45,15 @@ function init() {
 // ─── SIDEBAR ────────────────────────────────────────────────────
 function buildSidebar() {
   const d = state.data;
-  const totalBack = d.companies.reduce((s, c) =>
-    s + c.jobs.filter(j => j.category === 'back-office').length, 0);
+  const total = d.companies.reduce((s, c) => s + c.jobs.length, 0);
 
   // "Tổng quát" item
-  const allItem = makeNavItem('all', null, 'Tổng quát', totalBack, true);
+  const allItem = makeNavItem('all', null, 'Tổng quát', total, true);
   companyNav.appendChild(allItem);
 
   // Company items
   d.companies.forEach(co => {
-    const count = co.jobs.filter(j => j.category === state.activeCategory).length;
-    const item = makeNavItem(co.id, co.color, co.name, count, false);
+    const item = makeNavItem(co.id, co.color, co.name, co.jobs.length, false);
     companyNav.appendChild(item);
   });
 }
@@ -70,35 +67,13 @@ function makeNavItem(id, color, name, count, isActive) {
     ? `<div class="company-dot" style="background:${color}"></div>`
     : `<div class="company-dot" style="background:rgba(255,255,255,0.3)"></div>`;
 
-  el.innerHTML = `${dot}<span class="nav-label">${name}</span><span class="nav-badge">${count}</span>`;
+  el.innerHTML = `${dot}<span class="nav-label">${escapeHtml(name)}</span><span class="nav-badge">${count}</span>`;
   return el;
-}
-
-function updateSidebarCounts() {
-  const items = companyNav.querySelectorAll('.nav-item');
-  items.forEach(item => {
-    const id = item.dataset.company;
-    const badge = item.querySelector('.nav-badge');
-    if (!badge) return;
-    if (id === 'all') {
-      const total = state.data.companies.reduce((s, c) =>
-        s + c.jobs.filter(j => j.category === state.activeCategory).length, 0);
-      badge.textContent = total;
-    } else {
-      const co = state.data.companies.find(c => c.id === id);
-      if (co) badge.textContent = co.jobs.filter(j => j.category === state.activeCategory).length;
-    }
-  });
 }
 
 // ─── RENDER ─────────────────────────────────────────────────────
 function render() {
   if (!state.data) return;
-
-  if (state.activeCategory === 'tvv') {
-    renderTVV();
-    return;
-  }
 
   if (state.activeCompany === 'all') {
     renderOverview();
@@ -112,27 +87,22 @@ function renderOverview() {
   const d = state.data;
   const companies = d.companies;
 
-  const totalJobs = companies.reduce((s, c) =>
-    s + c.jobs.filter(j => j.category === 'back-office').length, 0);
-  const topCo = [...companies].sort((a, b) =>
-    b.jobs.filter(j=>j.category==='back-office').length -
-    a.jobs.filter(j=>j.category==='back-office').length)[0];
+  const totalJobs = companies.reduce((s, c) => s + c.jobs.length, 0);
   const hanoiJobs = companies.reduce((s, c) =>
-    s + c.jobs.filter(j => j.category==='back-office' && isHanoi(j.location)).length, 0);
+    s + c.jobs.filter(j => isHanoi(j.location)).length, 0);
   const hcmJobs = companies.reduce((s, c) =>
-    s + c.jobs.filter(j => j.category==='back-office' && isHCM(j.location)).length, 0);
+    s + c.jobs.filter(j => isHCM(j.location)).length, 0);
 
   // Filter companies by search
   const sq = state.search.toLowerCase();
   const filteredCos = companies.filter(co => {
     if (!sq) return true;
-    return co.jobs.some(j =>
-      j.category === 'back-office' && j.title.toLowerCase().includes(sq));
+    return co.jobs.some(j => j.title && j.title.toLowerCase().includes(sq));
   });
 
   content.innerHTML = `
     <div class="overview-header">
-      <div class="overview-title">Tổng quan tuyển dụng Khối văn phòng</div>
+      <div class="overview-title">Tổng quan tuyển dụng</div>
       <div class="overview-sub">Dữ liệu cập nhật ${formatDate(d.lastUpdated)} • Nguồn: Tại website chính thức của các công ty. Thông tin được cập nhật hàng tuần.</div>
     </div>
 
@@ -170,7 +140,7 @@ function renderOverview() {
 }
 
 function renderCompanyCard(co) {
-  const jobs = co.jobs.filter(j => j.category === 'back-office');
+  const jobs = co.jobs;
   const hcmCount = jobs.filter(j => isHCM(j.location)).length;
   const hanoiCount = jobs.filter(j => isHanoi(j.location)).length;
   const otherCount = jobs.length - hcmCount - hanoiCount;
@@ -212,22 +182,22 @@ function renderCompanyCard(co) {
 // Company detail: job table
 function renderCompany(companyId) {
   const co = state.data.companies.find(c => c.id === companyId);
-  if (!co) return;
+  if (!co) { selectCompany('all'); return; }
 
   const sq = state.search.toLowerCase();
   const cf = state.cityFilter;
 
-  let jobs = co.jobs.filter(j => j.category === 'back-office');
+  let jobs = co.jobs;
 
   // Apply city filter
   if (cf === 'hcm') jobs = jobs.filter(j => isHCM(j.location));
   else if (cf === 'hanoi') jobs = jobs.filter(j => isHanoi(j.location));
   else if (cf === 'other') jobs = jobs.filter(j => !isHCM(j.location) && !isHanoi(j.location));
 
-  // Apply search
+  // Apply search (guard against null title)
   let filteredJobs = jobs;
   if (sq) {
-    filteredJobs = jobs.filter(j => j.title.toLowerCase().includes(sq));
+    filteredJobs = jobs.filter(j => j.title && j.title.toLowerCase().includes(sq));
   }
 
   const initials = co.name.split(' ').map(w=>w[0]).join('').slice(0,3).toUpperCase();
@@ -258,12 +228,14 @@ function renderCompany(companyId) {
     return;
   }
 
+  const sqSafe = escapeHtml(sq);
   const tableRows = filteredJobs.length > 0
     ? filteredJobs.map((j, i) => {
         const locClass = isHanoi(j.location) ? 'hanoi' : (!isHCM(j.location) ? 'other' : '');
-        const titleHl = sq
-          ? j.title.replace(new RegExp(`(${escapeRe(sq)})`, 'gi'), '<mark>$1</mark>')
-          : j.title;
+        const safeTitle = escapeHtml(j.title || '');
+        const titleHl = sqSafe
+          ? safeTitle.replace(new RegExp(`(${escapeRe(sqSafe)})`, 'gi'), '<mark>$1</mark>')
+          : safeTitle;
         return `
           <tr>
             <td class="job-num">${i+1}</td>
@@ -287,14 +259,14 @@ function renderCompany(companyId) {
       <div class="company-header-logo" style="background:${co.color}">${initials}</div>
       <div class="company-header-info">
         <div class="company-header-name">${co.name} Vietnam</div>
-        <div class="company-header-meta">${jobs.length} vị trí Back Office đang tuyển • ${co.careerUrl.replace('https://','').split('/')[0]}</div>
+        <div class="company-header-meta">${jobs.length} vị trí đang tuyển • ${co.careerUrl.replace('https://','').split('/')[0]}</div>
       </div>
       <div class="company-header-cta">
         <a class="btn-apply btn-primary" href="${applyHref}" target="_blank">${applyLabel}</a>
       </div>
     </div>
 
-    <div class="results-count">Hiển thị ${filteredJobs.length} / ${jobs.length} vị trí${sq ? ` cho từ khóa "<strong>${sq}</strong>"` : ''}</div>
+    <div class="results-count">Hiển thị ${filteredJobs.length} / ${jobs.length} vị trí${sq ? ` cho từ khóa "<strong>${sqSafe}</strong>"` : ''}</div>
 
     <div class="job-table-wrap">
       <table class="job-table">
@@ -313,19 +285,6 @@ function renderCompany(companyId) {
   `;
 }
 
-function renderTVV() {
-  content.innerHTML = `
-    <div class="coming-soon">
-      <div class="coming-soon-icon">👥</div>
-      <div class="coming-soon-title">Đội ngũ TVV — Sắp ra mắt</div>
-      <div class="coming-soon-sub">
-        Mục Tuyển dụng Tư vấn viên (TVV) đang được xây dựng.
-        Vui lòng quay lại sau hoặc liên hệ trực tiếp trang tuyển dụng của từng công ty.
-      </div>
-    </div>
-  `;
-}
-
 // ─── EVENTS ─────────────────────────────────────────────────────
 function bindEvents() {
   // Sidebar company nav
@@ -333,17 +292,6 @@ function bindEvents() {
     const item = e.target.closest('.nav-item');
     if (!item) return;
     selectCompany(item.dataset.company);
-  });
-
-  // Category tabs
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      state.activeCategory = tab.dataset.cat;
-      updateSidebarCounts();
-      render();
-    });
   });
 
   // Search
@@ -395,6 +343,10 @@ function formatDate(dateStr) {
 
 function escapeRe(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 // ─── BOOT ───────────────────────────────────────────────────────
