@@ -2,12 +2,84 @@
    BảoHiểmNhânThọ — App Logic
    ================================================================ */
 
+// ─── ROLE CATEGORIES ─────────────────────────────────────────────
+const CATEGORIES = {
+  actuarial: {
+    label: '📊 Tài chính & Actuarial',
+    kws: ['actuar', 'finance', 'financial', 'tài chính', 'kế toán', 'accounting',
+          'investment', 'đầu tư', 'risk', 'rủi ro', 'underwr', 'claim', 'bồi thường',
+          'pricing', 'reserving', 'audit', 'kiểm toán', 'tax', 'treasury', 'reporting',
+          'ifrs', 'bác sĩ thẩm định', 'thẩm định']
+  },
+  tech: {
+    label: '💻 Công nghệ & IT',
+    kws: ['developer', 'engineer', 'software', 'data ', 'digital', 'system',
+          'network', 'security', 'cloud', 'devops', 'database', 'web ', 'mobile',
+          'machine learning', 'lập trình', 'hệ thống', 'transformation', 'technology',
+          'infrastructure', 'architect', 'it specialist', 'it manager', 'analytics',
+          'business analyst', 'business analysis', 'phân tích nghiệp vụ',
+          'khoa học dữ liệu', 'tự động hóa', 'it service', 'it business', 'bi/',
+          'quản lý dự án công nghệ']
+  },
+  sales: {
+    label: '🤝 Kinh doanh & Sales',
+    kws: ['sales', 'business development', 'kinh doanh', 'agent', 'broker',
+          'distribution', 'bán hàng', 'phân phối', 'bancassurance', 'agency',
+          'relationship manager', 'account manager', 'business manager',
+          'regional manager', 'territory', 'mdrt', 'gama', 'partnership',
+          'phát triển đối tác', 'account management', 'head of account',
+          'area director', 'client services', 'new business']
+  },
+  hr: {
+    label: '👥 Nhân sự & Đào tạo',
+    kws: ['human resource', 'nhân sự', 'nhân lực', 'training', 'đào tạo', 'learning',
+          'talent', 'recruit', 'tuyển dụng', 'compensation', 'payroll', 'hrbp',
+          'people partner', ' hr ', 'instructional', 'elearning', 'pd trainer',
+          'future leader']
+  },
+  marketing: {
+    label: '📣 Marketing',
+    kws: ['marketing', 'brand', 'thương hiệu', 'communication', 'truyền thông',
+          'content', 'media', 'event ', 'crm', 'customer experience',
+          'customer engagement', 'digital marketing', 'campaign', 'creative',
+          'design manager', 'graphic design', 'designer', 'thiết kế sản phẩm',
+          'proposition', 'product proposition', 'chief product', 'phát triển sản phẩm']
+  },
+  legal: {
+    label: '⚖️ Pháp lý & Tuân thủ',
+    kws: ['legal', 'pháp lý', 'compliance', 'tuân thủ', 'regulatory', 'governance',
+          'anti-money', 'aml', 'fraud', 'internal control', 'law', 'attorney',
+          'government relation']
+  },
+  operations: {
+    label: '⚙️ Vận hành',
+    kws: ['operation', 'vận hành', 'admin', 'hành chính', 'facility',
+          'customer service', 'chăm sóc khách hàng', 'support', 'back office',
+          'policy', 'project manager', 'program manager', 'program delivery',
+          'procurement', 'supply chain', 'office manager', 'strategy', 'corporate',
+          'intern', 'contact center', 'call center', 'dịch vụ khách hàng',
+          'trợ lý', 'personal assistant', 'interpreter', 'phiên dịch',
+          'project lead', 'business planning', 'pd business', 'builder']
+  }
+};
+
+function getCategory(title) {
+  if (!title) return '';
+  const t = title.toLowerCase();
+  for (const [cat, { kws }] of Object.entries(CATEGORIES)) {
+    if (kws.some(kw => t.includes(kw))) return cat;
+  }
+  return '';
+}
+
 // ─── STATE ──────────────────────────────────────────────────────
 const state = {
   data: null,
+  prevJobs: null,         // Set<"coId:::title"> from prev.json snapshot
   activeCompany: 'all',   // 'all', 'saved', or company id
   search: '',
   cityFilter: 'all',
+  categoryFilter: 'all',
 };
 
 // ─── BOOKMARKS (localStorage) ───────────────────────────────────
@@ -29,12 +101,30 @@ function toggleBookmark(key) {
   saveBookmarks();
 }
 
+// ─── NEW-JOB DETECTION ──────────────────────────────────────────
+function isNewJob(coId, title) {
+  if (!state.prevJobs) return false;
+  return !state.prevJobs.has(`${coId}:::${title}`);
+}
+
+function countNewJobs() {
+  if (!state.data || !state.prevJobs) return 0;
+  let count = 0;
+  for (const co of state.data.companies) {
+    for (const j of co.jobs) {
+      if (isNewJob(co.id, j.title)) count++;
+    }
+  }
+  return count;
+}
+
 // ─── URL STATE ──────────────────────────────────────────────────
 function pushURL() {
   const params = new URLSearchParams();
   if (state.activeCompany === 'saved') params.set('view', 'saved');
   else if (state.activeCompany !== 'all') params.set('company', state.activeCompany);
   if (state.cityFilter !== 'all') params.set('city', state.cityFilter);
+  if (state.categoryFilter !== 'all') params.set('cat', state.categoryFilter);
   if (state.search) params.set('q', state.search);
   const str = params.toString();
   history.replaceState(null, '', str ? `?${str}` : window.location.pathname);
@@ -45,22 +135,38 @@ function readURLState() {
   if (params.get('view') === 'saved') state.activeCompany = 'saved';
   else state.activeCompany = params.get('company') || 'all';
   state.cityFilter = params.get('city') || 'all';
+  state.categoryFilter = params.get('cat') || 'all';
   state.search = params.get('q') || '';
 }
 
 // ─── ELEMENTS ───────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
-const companyNav   = $('companyNav');
-const content      = $('content');
-const lastUpdated  = $('lastUpdated');
-const searchInput  = $('searchInput');
-const cityFilter   = $('cityFilter');
+const companyNav     = $('companyNav');
+const content        = $('content');
+const lastUpdated    = $('lastUpdated');
+const searchInput    = $('searchInput');
+const cityFilter     = $('cityFilter');
+const categoryFilter = $('categoryFilter');
 
 // ─── LOAD DATA ──────────────────────────────────────────────────
 async function loadData() {
   try {
-    const res = await fetch('data/jobs.json');
-    state.data = await res.json();
+    const [jobsRes, prevRes] = await Promise.all([
+      fetch('data/jobs.json'),
+      fetch('data/prev.json').catch(() => null),
+    ]);
+    state.data = await jobsRes.json();
+
+    if (prevRes && prevRes.ok) {
+      const prev = await prevRes.json();
+      state.prevJobs = new Set();
+      for (const [coId, titles] of Object.entries(prev.jobs || {})) {
+        for (const title of titles) {
+          state.prevJobs.add(`${coId}:::${title}`);
+        }
+      }
+    }
+
     init();
   } catch (e) {
     content.innerHTML = `<div class="empty-state">
@@ -80,6 +186,7 @@ function init() {
   // Sync UI controls with URL state
   if (state.search) searchInput.value = state.search;
   if (state.cityFilter !== 'all') cityFilter.value = state.cityFilter;
+  if (state.categoryFilter !== 'all') categoryFilter.value = state.categoryFilter;
   render();
   bindEvents();
 }
@@ -120,6 +227,22 @@ function makeNavItem(id, color, name, count, isActive) {
   return el;
 }
 
+// ─── FILTER HELPERS ──────────────────────────────────────────────
+function applyFilters(jobs) {
+  const sq = state.search.toLowerCase();
+  const cf = state.cityFilter;
+  const cat = state.categoryFilter;
+
+  return jobs.filter(j => {
+    if (cf === 'hcm' && !isHCM(j.location)) return false;
+    if (cf === 'hanoi' && !isHanoi(j.location)) return false;
+    if (cf === 'other' && (isHCM(j.location) || isHanoi(j.location))) return false;
+    if (cat !== 'all' && getCategory(j.title) !== cat) return false;
+    if (sq && !(j.title && j.title.toLowerCase().includes(sq))) return false;
+    return true;
+  });
+}
+
 // ─── RENDER ─────────────────────────────────────────────────────
 function render() {
   if (!state.data) return;
@@ -143,12 +266,25 @@ function renderOverview() {
     s + c.jobs.filter(j => isHanoi(j.location)).length, 0);
   const hcmJobs = companies.reduce((s, c) =>
     s + c.jobs.filter(j => isHCM(j.location)).length, 0);
+  const newJobCount = countNewJobs();
 
   const sq = state.search.toLowerCase();
+  const cat = state.categoryFilter;
+
   const filteredCos = companies.filter(co => {
-    if (!sq) return true;
-    return co.jobs.some(j => j.title && j.title.toLowerCase().includes(sq));
+    if (!sq && cat === 'all') return true;
+    return co.jobs.some(j =>
+      (cat === 'all' || getCategory(j.title) === cat) &&
+      (!sq || (j.title && j.title.toLowerCase().includes(sq)))
+    );
   });
+
+  const newBadgeRow = newJobCount > 0
+    ? `<div class="stat-card stat-card--new">
+        <div class="stat-num stat-num--new">${newJobCount}</div>
+        <div class="stat-label">Mới tuần này 🆕</div>
+      </div>`
+    : '';
 
   content.innerHTML = `
     <div class="overview-header">
@@ -173,6 +309,7 @@ function renderOverview() {
         <div class="stat-num">${hanoiJobs}</div>
         <div class="stat-label">Tại Hà Nội</div>
       </div>
+      ${newBadgeRow}
     </div>
 
     <div class="company-grid">
@@ -193,11 +330,13 @@ function renderCompanyCard(co) {
   const hcmCount = jobs.filter(j => isHCM(j.location)).length;
   const hanoiCount = jobs.filter(j => isHanoi(j.location)).length;
   const otherCount = jobs.length - hcmCount - hanoiCount;
+  const newCount = jobs.filter(j => isNewJob(co.id, j.title)).length;
 
   const cityPills = [
     hcmCount ? `<span class="city-pill">🏙️ HCM: ${hcmCount}</span>` : '',
     hanoiCount ? `<span class="city-pill" style="background:rgba(52,211,153,0.15);color:#6ee7b7">🌿 Hà Nội: ${hanoiCount}</span>` : '',
     otherCount ? `<span class="city-pill" style="background:rgba(139,92,246,0.15);color:#c4b5fd">📍 Tỉnh khác: ${otherCount}</span>` : '',
+    newCount ? `<span class="city-pill city-pill--new">🆕 ${newCount} mới</span>` : '',
   ].filter(Boolean).join('');
 
   const initials = co.name.split(' ').map(w=>w[0]).join('').slice(0,3).toUpperCase();
@@ -256,11 +395,12 @@ function renderBookmarks() {
     const rows = jobs.map((j, i) => {
       const key = jobKey(co.id, j);
       const locClass = isHanoi(j.location) ? 'hanoi' : (!isHCM(j.location) ? 'other' : '');
+      const newBadge = isNewJob(co.id, j.title) ? '<span class="new-badge">🆕 Mới</span>' : '';
       return `
         <tr>
           <td class="job-num">${i+1}</td>
           <td class="job-title">
-            <span class="job-title-text">${escapeHtml(j.title || '')}</span>
+            <span class="job-title-text">${escapeHtml(j.title || '')}${newBadge}</span>
             <button class="job-bookmark-btn active" data-key="${escapeHtml(key)}" title="Bỏ lưu">★</button>
           </td>
           <td class="job-location"><span class="location-badge ${locClass}">📍 ${escapeHtml(j.location || '')}</span></td>
@@ -303,18 +443,15 @@ function renderCompany(companyId) {
   if (!co) { selectCompany('all'); return; }
 
   const sq = state.search.toLowerCase();
-  const cf = state.cityFilter;
-
-  let jobs = co.jobs;
-
-  if (cf === 'hcm') jobs = jobs.filter(j => isHCM(j.location));
-  else if (cf === 'hanoi') jobs = jobs.filter(j => isHanoi(j.location));
-  else if (cf === 'other') jobs = jobs.filter(j => !isHCM(j.location) && !isHanoi(j.location));
-
-  let filteredJobs = jobs;
-  if (sq) {
-    filteredJobs = jobs.filter(j => j.title && j.title.toLowerCase().includes(sq));
-  }
+  const filteredJobs = applyFilters(co.jobs);
+  // City-only filtered for count display
+  const cityJobs = co.jobs.filter(j => {
+    const cf = state.cityFilter;
+    if (cf === 'hcm') return isHCM(j.location);
+    if (cf === 'hanoi') return isHanoi(j.location);
+    if (cf === 'other') return !isHCM(j.location) && !isHanoi(j.location);
+    return true;
+  });
 
   const initials = co.name.split(' ').map(w=>w[0]).join('').slice(0,3).toUpperCase();
   const applyLabel = co.applyEmail ? `✉️ Gửi CV qua Email` : '🔗 Trang tuyển dụng';
@@ -343,6 +480,11 @@ function renderCompany(companyId) {
     return;
   }
 
+  // Category breakdown chips (shown when no category filter active)
+  const catChips = state.categoryFilter === 'all'
+    ? buildCategoryChips(co.id, co.jobs)
+    : '';
+
   const sqSafe = escapeHtml(sq);
   const tableRows = filteredJobs.length > 0
     ? filteredJobs.map((j, i) => {
@@ -353,14 +495,17 @@ function renderCompany(companyId) {
         const titleHl = sqSafe
           ? safeTitle.replace(new RegExp(`(${escapeRe(sqSafe)})`, 'gi'), '<mark>$1</mark>')
           : safeTitle;
+        const newBadge = isNewJob(co.id, j.title) ? '<span class="new-badge">🆕 Mới</span>' : '';
+        const catTag = buildCategoryTag(j.title);
         return `
           <tr>
             <td class="job-num">${i+1}</td>
             <td class="job-title">
-              <span class="job-title-text">${titleHl}</span>
+              <span class="job-title-text">${titleHl}${newBadge}</span>
               <button class="job-bookmark-btn ${isBookmarked ? 'active' : ''}" data-key="${escapeHtml(key)}" title="${isBookmarked ? 'Bỏ lưu' : 'Lưu việc làm'}">★</button>
             </td>
             <td class="job-location"><span class="location-badge ${locClass}">📍 ${escapeHtml(j.location || '')}</span></td>
+            <td class="job-category">${catTag}</td>
             <td class="job-posted">${escapeHtml(j.posted || '')}</td>
             <td class="job-actions">
               <a class="job-apply-link" href="${co.careerUrl}" target="_blank">Ứng tuyển →</a>
@@ -368,7 +513,7 @@ function renderCompany(companyId) {
             </td>
           </tr>`;
       }).join('')
-    : `<tr><td colspan="5">
+    : `<tr><td colspan="6">
         <div class="empty-state">
           <div class="empty-icon">🔍</div>
           <div class="empty-text">Không tìm thấy vị trí nào</div>
@@ -376,20 +521,27 @@ function renderCompany(companyId) {
         </div>
        </td></tr>`;
 
+  const activeFilters = [];
+  if (state.categoryFilter !== 'all') activeFilters.push(`vai trò: <strong>${CATEGORIES[state.categoryFilter]?.label || state.categoryFilter}</strong>`);
+  if (sq) activeFilters.push(`từ khóa: "<strong>${sqSafe}</strong>"`);
+  const filterNote = activeFilters.length ? ` · Lọc theo ${activeFilters.join(', ')}` : '';
+
   content.innerHTML = `
     ${backBtn}
     <div class="company-header">
       <div class="company-header-logo" style="background:${co.color}">${initials}</div>
       <div class="company-header-info">
         <div class="company-header-name">${co.name} Vietnam</div>
-        <div class="company-header-meta">${jobs.length} vị trí đang tuyển • ${co.careerUrl.replace('https://','').split('/')[0]}</div>
+        <div class="company-header-meta">${co.jobs.length} vị trí đang tuyển • ${co.careerUrl.replace('https://','').split('/')[0]}</div>
       </div>
       <div class="company-header-cta">
         <a class="btn-apply btn-primary" href="${applyHref}" target="_blank">${applyLabel}</a>
       </div>
     </div>
 
-    <div class="results-count">Hiển thị ${filteredJobs.length} / ${jobs.length} vị trí${sq ? ` cho từ khóa "<strong>${sqSafe}</strong>"` : ''}</div>
+    ${catChips}
+
+    <div class="results-count">Hiển thị ${filteredJobs.length} / ${co.jobs.length} vị trí${filterNote}</div>
 
     <div class="job-table-wrap">
       <table class="job-table">
@@ -398,6 +550,7 @@ function renderCompany(companyId) {
             <th>#</th>
             <th>Vị trí tuyển dụng</th>
             <th>Địa điểm</th>
+            <th>Vai trò</th>
             <th>Đăng</th>
             <th>Hành động</th>
           </tr>
@@ -408,6 +561,42 @@ function renderCompany(companyId) {
   `;
 
   bindTableEvents(content);
+
+  // Wire up category chip clicks
+  content.querySelectorAll('.cat-chip[data-cat]').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const cat = chip.dataset.cat;
+      state.categoryFilter = (state.categoryFilter === cat) ? 'all' : cat;
+      categoryFilter.value = state.categoryFilter;
+      pushURL();
+      render();
+    });
+  });
+}
+
+// Build category chips for company header
+function buildCategoryChips(coId, jobs) {
+  const counts = {};
+  for (const j of jobs) {
+    const cat = getCategory(j.title) || 'other';
+    counts[cat] = (counts[cat] || 0) + 1;
+  }
+  const chips = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([cat, count]) => {
+      const label = CATEGORIES[cat]?.label || '⚙️ Khác';
+      const isActive = state.categoryFilter === cat;
+      return `<button class="cat-chip ${isActive ? 'active' : ''}" data-cat="${cat}">${label} <span class="cat-chip-count">${count}</span></button>`;
+    }).join('');
+  return chips ? `<div class="cat-chips">${chips}</div>` : '';
+}
+
+// Build single category tag for table cell
+function buildCategoryTag(title) {
+  const cat = getCategory(title);
+  if (!cat) return '<span class="cat-tag cat-tag--other">—</span>';
+  const info = CATEGORIES[cat];
+  return `<span class="cat-tag cat-tag--${cat}">${info.label.split(' ').slice(0,2).join(' ')}</span>`;
 }
 
 // ─── TABLE EVENT DELEGATION ──────────────────────────────────────
@@ -465,6 +654,12 @@ function bindEvents() {
 
   cityFilter.addEventListener('change', () => {
     state.cityFilter = cityFilter.value;
+    pushURL();
+    render();
+  });
+
+  categoryFilter.addEventListener('change', () => {
+    state.categoryFilter = categoryFilter.value;
     pushURL();
     render();
   });

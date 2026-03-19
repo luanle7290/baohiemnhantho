@@ -521,6 +521,98 @@ body { font-family: var(--font); background: var(--bg-base); color: var(--text-1
 .empty-text { font-size: 15px; color: var(--text-2); }
 .empty-sub { font-size: 13px; margin-top: 6px; color: var(--text-3); }
 
+/* ── NEW BADGE ──────────────────────────────────────────────── */
+.new-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: rgba(245,158,11,0.18);
+  color: var(--gold);
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(245,158,11,0.3);
+  white-space: nowrap;
+}
+
+/* City pill "new" variant */
+.city-pill--new {
+  background: rgba(245,158,11,0.15);
+  color: var(--gold);
+  border: 1px solid rgba(245,158,11,0.25);
+}
+
+/* "New this week" stat card */
+.stat-card--new {
+  border-color: rgba(245,158,11,0.3);
+  background: rgba(245,158,11,0.06);
+}
+.stat-num--new { color: var(--gold); }
+
+/* ── CATEGORY CHIPS (company header) ────────────────────────── */
+.cat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.cat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--text-2);
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+.cat-chip:hover { border-color: var(--accent); color: var(--text-1); }
+.cat-chip.active {
+  background: rgba(0,210,160,0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.cat-chip-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--bg-base);
+  border-radius: 10px;
+  padding: 0 5px;
+  color: var(--text-3);
+}
+.cat-chip.active .cat-chip-count { background: rgba(0,210,160,0.2); color: var(--accent); }
+
+/* ── CATEGORY TAG (table cell) ──────────────────────────────── */
+.job-category { white-space: nowrap; }
+.cat-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--bg-raised);
+  color: var(--text-3);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.cat-tag--other { opacity: 0.5; }
+.cat-tag--actuarial { background: rgba(245,158,11,0.1); color: #fbbf24; border-color: rgba(245,158,11,0.2); }
+.cat-tag--tech      { background: rgba(59,130,246,0.1); color: #60a5fa; border-color: rgba(59,130,246,0.2); }
+.cat-tag--sales     { background: rgba(16,185,129,0.1); color: #34d399; border-color: rgba(16,185,129,0.2); }
+.cat-tag--hr        { background: rgba(139,92,246,0.1); color: #a78bfa; border-color: rgba(139,92,246,0.2); }
+.cat-tag--marketing { background: rgba(236,72,153,0.1); color: #f472b6; border-color: rgba(236,72,153,0.2); }
+.cat-tag--legal     { background: rgba(239,68,68,0.1);  color: #f87171; border-color: rgba(239,68,68,0.2); }
+.cat-tag--operations{ background: rgba(107,114,128,0.15); color: #9ca3af; border-color: rgba(107,114,128,0.25); }
+
 /* ── SCROLLBAR (global) ─────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
@@ -601,4 +693,8 @@ body { font-family: var(--font); background: var(--bg-base); color: var(--text-1
   /* FIX #7 & #8: larger touch targets for bookmark + share (min 44px) */
   .job-bookmark-btn { padding: 14px 10px; font-size: 15px; }
   .job-share-btn    { padding: 13px 12px; font-size: 13px; }
+
+  /* ── CATEGORY CHIPS on mobile ────────────────────────────── */
+  .cat-chips { gap: 5px; }
+  .cat-chip  { font-size: 11px; padding: 5px 9px; }
 }
