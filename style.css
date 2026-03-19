@@ -549,16 +549,56 @@ body { font-family: var(--font); background: var(--bg-base); color: var(--text-1
 
 @media (max-width: 800px) {
   .mobile-only { display: inline-flex; }
+
+  /* App shell: stack vertically */
   .app { flex-direction: column; }
-  .sidebar { width: 100%; min-width: unset; height: auto; flex-direction: row; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--border); }
-  .sidebar-nav { flex-direction: row; padding: 8px; }
-  .sidebar-brand { border-bottom: none; padding: 10px 16px; flex-shrink: 0; }
-  .sidebar-section-label, .sidebar-footer { display: none; }
-  .topbar { flex-wrap: wrap; height: auto; padding: 8px 16px; }
-  .topbar-right { width: 100%; }
-  .search-input { width: 140px; }
-  .company-grid { grid-template-columns: 1fr; }
   body { overflow: auto; }
   .main { overflow: visible; }
-  .content { overflow: visible; }
+  .content { overflow: visible; padding: 16px; }  /* tighter padding on mobile */
+
+  /* ── SIDEBAR → horizontal scroll strip ──────────────────── */
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    flex-direction: row;
+    flex-shrink: 0;           /* FIX #1: prevent sidebar collapsing to 0px */
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-nav { flex-direction: row; padding: 6px 8px; }
+  .sidebar-brand { border-bottom: none; padding: 10px 14px; flex-shrink: 0; }
+  .sidebar-section-label,
+  .sidebar-footer,
+  .nav-separator-label { display: none; }   /* FIX #2: hide separator in nav strip */
+
+  /* FIX #3: prevent nav item text from wrapping */
+  .nav-item { white-space: nowrap; }
+
+  /* ── TOPBAR ──────────────────────────────────────────────── */
+  .topbar { flex-wrap: wrap; height: auto; padding: 8px 12px; }
+  .topbar-right { width: 100%; gap: 8px; }
+
+  /* FIX #6: search fills remaining width next to city select */
+  .search-wrap { flex: 1; min-width: 0; }
+  .search-input { width: 100%; min-width: 0; }
+
+  /* ── COMPANY GRID ────────────────────────────────────────── */
+  .company-grid { grid-template-columns: 1fr; }
+
+  /* ── COMPANY HEADER: stack on small screens ─────────────── */
+  /* FIX #5: CTA button wraps below company name on mobile */
+  .company-header { flex-wrap: wrap; gap: 10px; }
+  .company-header-info { min-width: 0; }
+  .company-header-cta { width: 100%; }
+  .btn-apply { width: 100%; justify-content: center; }
+
+  /* ── JOB TABLE ───────────────────────────────────────────── */
+  /* FIX #4: allow horizontal scroll so table never clips content */
+  .job-table-wrap { overflow-x: auto; }
+
+  /* FIX #7 & #8: larger touch targets for bookmark + share (min 44px) */
+  .job-bookmark-btn { padding: 14px 10px; font-size: 15px; }
+  .job-share-btn    { padding: 13px 12px; font-size: 13px; }
 }
