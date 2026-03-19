@@ -406,8 +406,10 @@ function renderBookmarks() {
           <td class="job-location"><span class="location-badge ${locClass}">📍 ${escapeHtml(j.location || '')}</span></td>
           <td class="job-posted">${escapeHtml(j.posted || '')}</td>
           <td class="job-actions">
-            <a class="job-apply-link" href="${co.careerUrl}" target="_blank">Ứng tuyển →</a>
-            <button class="job-share-btn" data-company-id="${co.id}" data-company-name="${escapeHtml(co.name)}" data-title="${escapeHtml(j.title || '')}" data-location="${escapeHtml(j.location || '')}" title="Chia sẻ">↗</button>
+            <div class="job-actions-inner">
+              <a class="job-apply-link" href="${co.careerUrl}" target="_blank">Ứng tuyển →</a>
+              <button class="job-share-btn" data-company-id="${co.id}" data-company-name="${escapeHtml(co.name)}" data-title="${escapeHtml(j.title || '')}" data-location="${escapeHtml(j.location || '')}" title="Chia sẻ">↗</button>
+            </div>
           </td>
         </tr>`;
     }).join('');
@@ -508,8 +510,10 @@ function renderCompany(companyId) {
             <td class="job-category">${catTag}</td>
             <td class="job-posted">${escapeHtml(j.posted || '')}</td>
             <td class="job-actions">
-              <a class="job-apply-link" href="${co.careerUrl}" target="_blank">Ứng tuyển →</a>
-              <button class="job-share-btn" data-company-id="${co.id}" data-company-name="${escapeHtml(co.name)}" data-title="${escapeHtml(j.title || '')}" data-location="${escapeHtml(j.location || '')}" title="Chia sẻ">↗</button>
+              <div class="job-actions-inner">
+                <a class="job-apply-link" href="${co.careerUrl}" target="_blank">Ứng tuyển →</a>
+                <button class="job-share-btn" data-company-id="${co.id}" data-company-name="${escapeHtml(co.name)}" data-title="${escapeHtml(j.title || '')}" data-location="${escapeHtml(j.location || '')}" title="Chia sẻ">↗</button>
+              </div>
             </td>
           </tr>`;
       }).join('')

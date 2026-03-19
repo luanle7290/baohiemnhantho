@@ -423,7 +423,10 @@ body { font-family: var(--font); background: var(--bg-base); color: var(--text-1
 .job-posted { white-space: nowrap; color: var(--text-2); font-size: 12px; }
 
 /* ── JOB ACTIONS CELL ───────────────────────────────────────── */
-.job-actions {
+/* NOTE: flex must NOT be on <td> directly — it removes vertical-align: middle.
+   Use .job-actions-inner wrapper div instead. */
+.job-actions { white-space: nowrap; }
+.job-actions-inner {
   display: flex;
   align-items: center;
   gap: 6px;
