@@ -5,10 +5,48 @@
 // ─── STATE ──────────────────────────────────────────────────────
 const state = {
   data: null,
-  activeCompany: 'all',   // 'all' or company id
+  activeCompany: 'all',   // 'all', 'saved', or company id
   search: '',
   cityFilter: 'all',
 };
+
+// ─── BOOKMARKS (localStorage) ───────────────────────────────────
+let bookmarks = new Set(JSON.parse(localStorage.getItem('bhnt_bookmarks') || '[]'));
+
+function jobKey(companyId, job) {
+  return `${companyId}:::${job.title || ''}:::${job.location || ''}`;
+}
+
+function saveBookmarks() {
+  localStorage.setItem('bhnt_bookmarks', JSON.stringify([...bookmarks]));
+  const badge = document.querySelector('.nav-item[data-company="saved"] .nav-badge');
+  if (badge) badge.textContent = bookmarks.size;
+}
+
+function toggleBookmark(key) {
+  if (bookmarks.has(key)) bookmarks.delete(key);
+  else bookmarks.add(key);
+  saveBookmarks();
+}
+
+// ─── URL STATE ──────────────────────────────────────────────────
+function pushURL() {
+  const params = new URLSearchParams();
+  if (state.activeCompany === 'saved') params.set('view', 'saved');
+  else if (state.activeCompany !== 'all') params.set('company', state.activeCompany);
+  if (state.cityFilter !== 'all') params.set('city', state.cityFilter);
+  if (state.search) params.set('q', state.search);
+  const str = params.toString();
+  history.replaceState(null, '', str ? `?${str}` : window.location.pathname);
+}
+
+function readURLState() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('view') === 'saved') state.activeCompany = 'saved';
+  else state.activeCompany = params.get('company') || 'all';
+  state.cityFilter = params.get('city') || 'all';
+  state.search = params.get('q') || '';
+}
 
 // ─── ELEMENTS ───────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
@@ -37,7 +75,11 @@ async function loadData() {
 function init() {
   const d = state.data;
   lastUpdated.textContent = formatDate(d.lastUpdated);
+  readURLState();
   buildSidebar();
+  // Sync UI controls with URL state
+  if (state.search) searchInput.value = state.search;
+  if (state.cityFilter !== 'all') cityFilter.value = state.cityFilter;
   render();
   bindEvents();
 }
@@ -48,13 +90,20 @@ function buildSidebar() {
   const total = d.companies.reduce((s, c) => s + c.jobs.length, 0);
 
   // "Tổng quát" item
-  const allItem = makeNavItem('all', null, 'Tổng quát', total, true);
-  companyNav.appendChild(allItem);
+  companyNav.appendChild(makeNavItem('all', null, 'Tổng quát', total, state.activeCompany === 'all'));
+
+  // "Đã lưu" item
+  companyNav.appendChild(makeNavItem('saved', null, '⭐ Đã lưu', bookmarks.size, state.activeCompany === 'saved'));
+
+  // Separator
+  const sep = document.createElement('div');
+  sep.className = 'nav-separator-label';
+  sep.textContent = 'DANH SÁCH CÔNG TY';
+  companyNav.appendChild(sep);
 
   // Company items
   d.companies.forEach(co => {
-    const item = makeNavItem(co.id, co.color, co.name, co.jobs.length, false);
-    companyNav.appendChild(item);
+    companyNav.appendChild(makeNavItem(co.id, co.color, co.name, co.jobs.length, state.activeCompany === co.id));
   });
 }
 
@@ -77,6 +126,8 @@ function render() {
 
   if (state.activeCompany === 'all') {
     renderOverview();
+  } else if (state.activeCompany === 'saved') {
+    renderBookmarks();
   } else {
     renderCompany(state.activeCompany);
   }
@@ -93,7 +144,6 @@ function renderOverview() {
   const hcmJobs = companies.reduce((s, c) =>
     s + c.jobs.filter(j => isHCM(j.location)).length, 0);
 
-  // Filter companies by search
   const sq = state.search.toLowerCase();
   const filteredCos = companies.filter(co => {
     if (!sq) return true;
@@ -130,7 +180,6 @@ function renderOverview() {
     </div>
   `;
 
-  // Bind card clicks
   content.querySelectorAll('.company-card').forEach(card => {
     card.addEventListener('click', e => {
       if (e.target.tagName === 'A') return;
@@ -179,6 +228,75 @@ function renderCompanyCard(co) {
   `;
 }
 
+// Saved jobs view
+function renderBookmarks() {
+  if (bookmarks.size === 0) {
+    content.innerHTML = `
+      <div class="overview-header">
+        <div class="overview-title">⭐ Việc làm đã lưu</div>
+        <div class="overview-sub">Lưu các vị trí bạn quan tâm để xem lại sau.</div>
+      </div>
+      <div class="empty-state" style="margin-top:40px">
+        <div class="empty-icon">🔖</div>
+        <div class="empty-text">Chưa có việc làm nào được lưu</div>
+        <div class="empty-sub">Nhấn ★ trên bất kỳ vị trí nào để lưu vào đây.</div>
+      </div>`;
+    return;
+  }
+
+  // Collect bookmarked jobs grouped by company
+  const groups = [];
+  for (const co of state.data.companies) {
+    const saved = co.jobs.filter(j => bookmarks.has(jobKey(co.id, j)));
+    if (saved.length > 0) groups.push({ co, jobs: saved });
+  }
+
+  const groupsHtml = groups.map(({ co, jobs }) => {
+    const initials = co.name.split(' ').map(w=>w[0]).join('').slice(0,3).toUpperCase();
+    const rows = jobs.map((j, i) => {
+      const key = jobKey(co.id, j);
+      const locClass = isHanoi(j.location) ? 'hanoi' : (!isHCM(j.location) ? 'other' : '');
+      return `
+        <tr>
+          <td class="job-num">${i+1}</td>
+          <td class="job-title">
+            <span class="job-title-text">${escapeHtml(j.title || '')}</span>
+            <button class="job-bookmark-btn active" data-key="${escapeHtml(key)}" title="Bỏ lưu">★</button>
+          </td>
+          <td class="job-location"><span class="location-badge ${locClass}">📍 ${escapeHtml(j.location || '')}</span></td>
+          <td class="job-posted">${escapeHtml(j.posted || '')}</td>
+          <td class="job-actions">
+            <a class="job-apply-link" href="${co.careerUrl}" target="_blank">Ứng tuyển →</a>
+            <button class="job-share-btn" data-company-id="${co.id}" data-company-name="${escapeHtml(co.name)}" data-title="${escapeHtml(j.title || '')}" data-location="${escapeHtml(j.location || '')}" title="Chia sẻ">↗</button>
+          </td>
+        </tr>`;
+    }).join('');
+    return `
+      <div class="saved-company-group">
+        <div class="saved-company-label">
+          <div class="saved-company-dot" style="background:${co.color}">${initials}</div>
+          <span>${escapeHtml(co.name)}</span>
+        </div>
+        <div class="job-table-wrap" style="margin-bottom:16px">
+          <table class="job-table">
+            <thead><tr><th>#</th><th>Vị trí tuyển dụng</th><th>Địa điểm</th><th>Đăng</th><th>Hành động</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+      </div>`;
+  }).join('');
+
+  content.innerHTML = `
+    <div class="overview-header">
+      <div class="overview-title">⭐ Việc làm đã lưu <span style="font-size:16px;font-weight:500;color:var(--text-2)">(${bookmarks.size})</span></div>
+      <div class="overview-sub">Được lưu trong trình duyệt này — không cần đăng nhập.</div>
+    </div>
+    ${groupsHtml}
+  `;
+
+  bindTableEvents(content);
+}
+
 // Company detail: job table
 function renderCompany(companyId) {
   const co = state.data.companies.find(c => c.id === companyId);
@@ -189,12 +307,10 @@ function renderCompany(companyId) {
 
   let jobs = co.jobs;
 
-  // Apply city filter
   if (cf === 'hcm') jobs = jobs.filter(j => isHCM(j.location));
   else if (cf === 'hanoi') jobs = jobs.filter(j => isHanoi(j.location));
   else if (cf === 'other') jobs = jobs.filter(j => !isHCM(j.location) && !isHanoi(j.location));
 
-  // Apply search (guard against null title)
   let filteredJobs = jobs;
   if (sq) {
     filteredJobs = jobs.filter(j => j.title && j.title.toLowerCase().includes(sq));
@@ -206,7 +322,6 @@ function renderCompany(companyId) {
 
   const backBtn = `<button class="btn-back mobile-only" onclick="selectCompany('all')">← Quay lại</button>`;
 
-  // If company has no jobs at all, show "no positions" notice
   if (co.jobs.length === 0) {
     content.innerHTML = `
       ${backBtn}
@@ -231,6 +346,8 @@ function renderCompany(companyId) {
   const sqSafe = escapeHtml(sq);
   const tableRows = filteredJobs.length > 0
     ? filteredJobs.map((j, i) => {
+        const key = jobKey(co.id, j);
+        const isBookmarked = bookmarks.has(key);
         const locClass = isHanoi(j.location) ? 'hanoi' : (!isHCM(j.location) ? 'other' : '');
         const safeTitle = escapeHtml(j.title || '');
         const titleHl = sqSafe
@@ -239,10 +356,16 @@ function renderCompany(companyId) {
         return `
           <tr>
             <td class="job-num">${i+1}</td>
-            <td class="job-title">${titleHl}</td>
-            <td class="job-location"><span class="location-badge ${locClass}">📍 ${j.location}</span></td>
-            <td class="job-posted">${j.posted}</td>
-            <td><a class="job-apply-link" href="${co.careerUrl}" target="_blank">Ứng tuyển →</a></td>
+            <td class="job-title">
+              <span class="job-title-text">${titleHl}</span>
+              <button class="job-bookmark-btn ${isBookmarked ? 'active' : ''}" data-key="${escapeHtml(key)}" title="${isBookmarked ? 'Bỏ lưu' : 'Lưu việc làm'}">★</button>
+            </td>
+            <td class="job-location"><span class="location-badge ${locClass}">📍 ${escapeHtml(j.location || '')}</span></td>
+            <td class="job-posted">${escapeHtml(j.posted || '')}</td>
+            <td class="job-actions">
+              <a class="job-apply-link" href="${co.careerUrl}" target="_blank">Ứng tuyển →</a>
+              <button class="job-share-btn" data-company-id="${co.id}" data-company-name="${escapeHtml(co.name)}" data-title="${escapeHtml(j.title || '')}" data-location="${escapeHtml(j.location || '')}" title="Chia sẻ">↗</button>
+            </td>
           </tr>`;
       }).join('')
     : `<tr><td colspan="5">
@@ -276,47 +399,83 @@ function renderCompany(companyId) {
             <th>Vị trí tuyển dụng</th>
             <th>Địa điểm</th>
             <th>Đăng</th>
-            <th>Ứng tuyển</th>
+            <th>Hành động</th>
           </tr>
         </thead>
         <tbody>${tableRows}</tbody>
       </table>
     </div>
   `;
+
+  bindTableEvents(content);
+}
+
+// ─── TABLE EVENT DELEGATION ──────────────────────────────────────
+function bindTableEvents(container) {
+  container.addEventListener('click', e => {
+    // Bookmark toggle
+    const bBtn = e.target.closest('.job-bookmark-btn');
+    if (bBtn) {
+      const key = bBtn.dataset.key;
+      toggleBookmark(key);
+      bBtn.classList.toggle('active', bookmarks.has(key));
+      bBtn.title = bookmarks.has(key) ? 'Bỏ lưu' : 'Lưu việc làm';
+      if (state.activeCompany === 'saved') render();
+      return;
+    }
+    // Share button
+    const sBtn = e.target.closest('.job-share-btn');
+    if (sBtn) {
+      const { companyId, companyName, title, location } = sBtn.dataset;
+      shareJob(companyId, companyName, title, location);
+    }
+  });
+}
+
+// ─── SHARE ──────────────────────────────────────────────────────
+function shareJob(companyId, companyName, title, location) {
+  const base = window.location.origin + window.location.pathname;
+  const url = `${base}?company=${encodeURIComponent(companyId)}`;
+  const text = `💼 ${title}\n🏢 ${companyName}\n📍 ${location}\n\n👉 Xem thêm: ${url}`;
+
+  if (navigator.share) {
+    navigator.share({ title, text, url }).catch(() => {});
+  } else {
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+  }
 }
 
 // ─── EVENTS ─────────────────────────────────────────────────────
 function bindEvents() {
-  // Sidebar company nav
   companyNav.addEventListener('click', e => {
     const item = e.target.closest('.nav-item');
     if (!item) return;
     selectCompany(item.dataset.company);
   });
 
-  // Search
   let searchTimer;
   searchInput.addEventListener('input', () => {
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => {
       state.search = searchInput.value.trim();
+      pushURL();
       render();
     }, 200);
   });
 
-  // City filter
   cityFilter.addEventListener('change', () => {
     state.cityFilter = cityFilter.value;
+    pushURL();
     render();
   });
 }
 
 function selectCompany(id) {
   state.activeCompany = id;
-  // Update active nav item
   companyNav.querySelectorAll('.nav-item').forEach(item => {
     item.classList.toggle('active', item.dataset.company === id);
   });
+  pushURL();
   render();
 }
 
@@ -324,7 +483,8 @@ function selectCompany(id) {
 function isHCM(loc) {
   if (!loc) return false;
   const l = loc.toLowerCase();
-  return l.includes('hồ chí minh') || l.includes('hcm') || l.includes('ho chi minh');
+  return l.includes('hồ chí minh') || l.includes('hcm') || l.includes('ho chi minh')
+      || l.includes('saigon') || l.includes('sài gòn');
 }
 
 function isHanoi(loc) {
@@ -346,7 +506,8 @@ function escapeRe(str) {
 }
 
 function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 // ─── BOOT ───────────────────────────────────────────────────────

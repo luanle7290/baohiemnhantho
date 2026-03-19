@@ -418,6 +418,82 @@ body { font-family: var(--font); background: var(--bg-base); color: var(--text-1
 
 .job-posted { white-space: nowrap; color: var(--text-2); font-size: 12px; }
 
+/* ── JOB ACTIONS CELL ───────────────────────────────────────── */
+.job-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* Bookmark button */
+.job-bookmark-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-3);
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), transform var(--transition);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.job-bookmark-btn:hover { color: var(--gold); transform: scale(1.15); }
+.job-bookmark-btn.active { color: var(--gold); }
+
+/* Title cell: flex to push star to the right */
+.job-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.job-title-text { flex: 1; font-weight: 500; }
+
+/* Share button */
+.job-share-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text-3);
+  padding: 4px 7px;
+  transition: color var(--transition), border-color var(--transition);
+  line-height: 1;
+}
+.job-share-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ── SAVED VIEW ─────────────────────────────────────────────── */
+.saved-company-group { margin-bottom: 8px; }
+.saved-company-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 2px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-2);
+}
+.saved-company-dot {
+  width: 28px; height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+/* ── NAV SEPARATOR ──────────────────────────────────────────── */
+.nav-separator-label {
+  padding: 12px 12px 4px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-3);
+  text-transform: uppercase;
+}
+
 .job-apply-link {
   display: inline-flex;
   align-items: center;
