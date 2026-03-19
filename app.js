@@ -522,7 +522,7 @@ function renderCompany(companyId) {
        </td></tr>`;
 
   const activeFilters = [];
-  if (state.categoryFilter !== 'all') activeFilters.push(`vai trò: <strong>${CATEGORIES[state.categoryFilter]?.label || state.categoryFilter}</strong>`);
+  if (state.categoryFilter !== 'all') activeFilters.push(`bộ phận: <strong>${CATEGORIES[state.categoryFilter]?.label || state.categoryFilter}</strong>`);
   if (sq) activeFilters.push(`từ khóa: "<strong>${sqSafe}</strong>"`);
   const filterNote = activeFilters.length ? ` · Lọc theo ${activeFilters.join(', ')}` : '';
 
@@ -547,11 +547,11 @@ function renderCompany(companyId) {
       <table class="job-table">
         <thead>
           <tr>
-            <th>#</th>
+            <th class="job-num">#</th>
             <th>Vị trí tuyển dụng</th>
-            <th>Địa điểm</th>
-            <th>Vai trò</th>
-            <th>Đăng</th>
+            <th class="job-location">Địa điểm</th>
+            <th class="job-category">Bộ Phận</th>
+            <th class="job-posted">Đăng</th>
             <th>Hành động</th>
           </tr>
         </thead>
@@ -596,7 +596,7 @@ function buildCategoryTag(title) {
   const cat = getCategory(title);
   if (!cat) return '<span class="cat-tag cat-tag--other">—</span>';
   const info = CATEGORIES[cat];
-  return `<span class="cat-tag cat-tag--${cat}">${info.label.split(' ').slice(0,2).join(' ')}</span>`;
+  return `<span class="cat-tag cat-tag--${cat}">${info.label.split(' ').slice(0,3).join(' ')}</span>`;
 }
 
 // ─── TABLE EVENT DELEGATION ──────────────────────────────────────

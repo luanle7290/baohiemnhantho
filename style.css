@@ -390,8 +390,12 @@ body { font-family: var(--font); background: var(--bg-base); color: var(--text-1
 .job-table tbody tr:last-child td { border-bottom: none; }
 .job-table tbody tr:hover td { background: var(--bg-raised); }
 
-.job-num { font-family: var(--font-mono); color: var(--text-3); font-size: 11px; width: 36px; }
-.job-title { font-weight: 500; max-width: 380px; }
+.job-num      { font-family: var(--font-mono); color: var(--text-3); font-size: 11px; width: 36px; }
+.job-title    { font-weight: 500; max-width: 360px; }
+/* Column width controls — adjust Địa điểm ← and Đăng → to give Bộ Phận room */
+.job-table .job-location { width: 142px; }
+.job-table .job-category { width: 168px; }
+.job-table .job-posted   { width: 88px; }
 .job-title mark {
   background: rgba(240,180,41,0.35);
   color: var(--gold);
