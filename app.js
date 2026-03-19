@@ -38,12 +38,17 @@ const CATEGORIES = {
           'future leader']
   },
   marketing: {
-    label: '📣 Marketing',
+    label: '📣 Marketing & Khách hàng',
     kws: ['marketing', 'brand', 'thương hiệu', 'communication', 'truyền thông',
           'content', 'media', 'event ', 'crm', 'customer experience',
           'customer engagement', 'digital marketing', 'campaign', 'creative',
           'design manager', 'graphic design', 'designer', 'thiết kế sản phẩm',
-          'proposition', 'product proposition', 'chief product', 'phát triển sản phẩm']
+          'proposition', 'product proposition', 'chief product', 'phát triển sản phẩm',
+          'khách hàng', 'customer']
+  },
+  strategy: {
+    label: '🎯 Chiến lược & Dự án',
+    kws: ['chiến lược', 'strategy', 'dự án', 'project', 'program']
   },
   legal: {
     label: '⚖️ Pháp lý & Tuân thủ',
@@ -55,11 +60,10 @@ const CATEGORIES = {
     label: '⚙️ Vận hành',
     kws: ['operation', 'vận hành', 'admin', 'hành chính', 'facility',
           'customer service', 'chăm sóc khách hàng', 'support', 'back office',
-          'policy', 'project manager', 'program manager', 'program delivery',
-          'procurement', 'supply chain', 'office manager', 'strategy', 'corporate',
+          'policy', 'procurement', 'supply chain', 'office manager', 'corporate',
           'intern', 'contact center', 'call center', 'dịch vụ khách hàng',
           'trợ lý', 'personal assistant', 'interpreter', 'phiên dịch',
-          'project lead', 'business planning', 'pd business', 'builder']
+          'business planning', 'pd business', 'builder']
   }
 };
 
