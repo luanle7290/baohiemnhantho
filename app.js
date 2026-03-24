@@ -7,7 +7,7 @@ const CATEGORIES = {
   actuarial: {
     label: '📊 Tài chính & Actuarial',
     kws: ['actuar', 'finance', 'financial', 'tài chính', 'kế toán', 'accounting',
-          'investment', 'đầu tư', 'risk', 'rủi ro', 'underwr', 'claim', 'bồi thường',
+          'investment', 'đầu tư', 'underwr', 'claim', 'bồi thường',
           'pricing', 'reserving', 'audit', 'kiểm toán', 'tax', 'treasury', 'reporting',
           'ifrs', 'bác sĩ thẩm định', 'thẩm định']
   },
@@ -28,7 +28,7 @@ const CATEGORIES = {
           'relationship manager', 'account manager', 'business manager',
           'regional manager', 'territory', 'mdrt', 'gama', 'partnership',
           'phát triển đối tác', 'account management', 'head of account',
-          'area director', 'client services', 'new business']
+          'area director', 'client services']
   },
   hr: {
     label: '👥 Nhân sự & Đào tạo',
@@ -51,10 +51,10 @@ const CATEGORIES = {
     kws: ['chiến lược', 'strategy', 'dự án', 'project', 'program']
   },
   legal: {
-    label: '⚖️ Pháp lý & Tuân thủ',
+    label: '⚖️ Pháp lý, Tuân thủ và Rủi ro',
     kws: ['legal', 'pháp lý', 'compliance', 'tuân thủ', 'regulatory', 'governance',
           'anti-money', 'aml', 'fraud', 'internal control', 'law', 'attorney',
-          'government relation']
+          'government relation', 'risk', 'rủi ro']
   },
   operations: {
     label: '⚙️ Vận hành',
@@ -63,7 +63,7 @@ const CATEGORIES = {
           'policy', 'procurement', 'supply chain', 'office manager', 'corporate',
           'intern', 'contact center', 'call center', 'dịch vụ khách hàng',
           'trợ lý', 'personal assistant', 'interpreter', 'phiên dịch',
-          'business planning', 'pd business', 'builder']
+          'business planning', 'pd business', 'builder', 'new business']
   }
 };
 
