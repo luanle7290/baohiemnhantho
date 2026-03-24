@@ -7,8 +7,8 @@ const CATEGORIES = {
   actuarial: {
     label: '📊 Tài chính & Actuarial',
     kws: ['actuar', 'finance', 'financial', 'tài chính', 'kế toán', 'accounting',
-          'investment', 'đầu tư', 'underwr', 'claim', 'bồi thường',
-          'pricing', 'reserving', 'audit', 'kiểm toán', 'tax', 'treasury', 'reporting',
+          'investment', 'đầu tư', 'underwr', 'pricing', 'reserving',
+          'audit', 'kiểm toán', 'tax', 'treasury', 'reporting',
           'ifrs', 'bác sĩ thẩm định', 'thẩm định']
   },
   tech: {
@@ -70,7 +70,7 @@ const CATEGORIES = {
 function getCategory(title) {
   if (!title) return '';
   const t = title.toLowerCase();
-  if (t.includes('claim investigation')) return 'operations';
+  if (t.includes('claim')) return 'operations';
   if (t.includes('compliance')) return 'legal';
   for (const [cat, { kws }] of Object.entries(CATEGORIES)) {
     if (kws.some(kw => t.includes(kw))) return cat;
