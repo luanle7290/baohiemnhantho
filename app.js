@@ -44,7 +44,7 @@ const CATEGORIES = {
           'customer engagement', 'digital marketing', 'campaign', 'creative',
           'design manager', 'graphic design', 'designer', 'thiết kế sản phẩm',
           'proposition', 'product proposition', 'chief product', 'phát triển sản phẩm',
-          'khách hàng', 'customer']
+          'khách hàng', 'customer', 'client']
   },
   strategy: {
     label: '🎯 Chiến lược & Dự án',
@@ -70,6 +70,7 @@ const CATEGORIES = {
 function getCategory(title) {
   if (!title) return '';
   const t = title.toLowerCase();
+  if (t.includes('claim investigation')) return 'operations';
   for (const [cat, { kws }] of Object.entries(CATEGORIES)) {
     if (kws.some(kw => t.includes(kw))) return cat;
   }
@@ -592,7 +593,7 @@ function buildCategoryChips(coId, jobs) {
   const chips = Object.entries(counts)
     .sort((a, b) => b[1] - a[1])
     .map(([cat, count]) => {
-      const label = CATEGORIES[cat]?.label || '⚙️ Khác';
+      const label = CATEGORIES[cat]?.label || '⚙️ Vận hành';
       const isActive = state.categoryFilter === cat;
       return `<button class="cat-chip ${isActive ? 'active' : ''}" data-cat="${cat}">${label} <span class="cat-chip-count">${count}</span></button>`;
     }).join('');
