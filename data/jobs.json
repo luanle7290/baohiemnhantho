@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-03-19",
+  "lastUpdated": "2026-03-24",
   "companies": [
     {
       "id": "prudential",
       "name": "Prudential",
       "color": "#E31837",
       "careerUrl": "https://prudential.wd3.myworkdayjobs.com/prudential?locationCountry=79af2e2c3c1f4247a4bc4f7182b1c396&locationHierarchy1=db69e8c8446c11de98360015c5e6daf6",
-      "jobCount": 39,
+      "jobCount": 40,
       "jobs": [
         {
           "title": "Finance Business Partner Manager  (Quản lý Phân tích Tài chính)",
@@ -75,12 +75,6 @@
           "category": "back-office"
         },
         {
-          "title": "Financial Reporting Senior Actuarial Manager (Quản Lý Cấp Cao Định Phí Bảo Hiểm, Báo Cáo Tài Chính)",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
           "title": "Digital Transformation Senior Specialist | Chuyên viên cấp cao Chuyển đổi số",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
@@ -124,6 +118,12 @@
         },
         {
           "title": "Software Senior Engineer (Kỹ Sư Cấp Cao Lập Trình)",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "Agency Leaders Design & Development Manager",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
           "category": "back-office"
@@ -232,12 +232,18 @@
         },
         {
           "title": "Agency Communication Manager (Quản Lý Truyền Thông Kênh Đại Lý)",
-          "location": "2 Locations",
+          "location": "TP. Hồ Chí Minh hoặc Hà Nội",
           "posted": "Mới đăng",
           "category": "back-office"
         },
         {
           "title": "Senior Manager, HR Business Partner",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "AML & Sanctions Manager (Quản lý Phòng chống rửa tiền)",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
           "category": "back-office"
@@ -249,66 +255,60 @@
       "name": "Manulife",
       "color": "#00A758",
       "careerUrl": "https://careers.manulife.com/global/en/search-results",
-      "jobCount": 25,
+      "jobCount": 27,
       "jobs": [
         {
           "title": "Business System Analyst",
           "location": "TP. Hồ Chí Minh",
           "posted": "05/03/2026",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Project Lead",
           "location": "TP. Hồ Chí Minh",
           "posted": "05/03/2026",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Backend Software Developer",
           "location": "TP. Hồ Chí Minh",
           "posted": "05/03/2026",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Infrastructure Engineer",
           "location": "TP. Hồ Chí Minh",
           "posted": "05/03/2026",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Assistant Manager, Full Stack Software Engineer",
           "location": "TP. Hồ Chí Minh",
           "posted": "09/03/2026",
-          "category": "back-office"
-        },
-        {
-          "title": "IT Business Analyst",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "18/03/2026",
-          "category": "back-office"
-        },
-        {
-          "title": "Front End Software Engineer",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "18/03/2026",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Back End Software Engineer",
           "location": "TP. Hồ Chí Minh",
           "posted": "18/03/2026",
-          "category": "back-office"
+          "category": "technology"
+        },
+        {
+          "title": "IT Business Analyst",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "18/03/2026",
+          "category": "technology"
+        },
+        {
+          "title": "Front End Software Engineer",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "18/03/2026",
+          "category": "technology"
         },
         {
           "title": "Claim Investigation Executive",
           "location": "TP. Hồ Chí Minh",
           "posted": "16/03/2026",
-          "category": "back-office"
-        },
-        {
-          "title": "Assistant Manager - Healthcare Claims",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "22/01/2026",
           "category": "back-office"
         },
         {
@@ -321,13 +321,7 @@
           "title": "Data Scientist (Gen AI)",
           "location": "TP. Hồ Chí Minh",
           "posted": "12/03/2026",
-          "category": "back-office"
-        },
-        {
-          "title": "Head of Digital Excellence & Platforms",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "16/03/2026",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Head of Compliance (Product, Sales & Distribution)",
@@ -336,15 +330,27 @@
           "category": "back-office"
         },
         {
-          "title": "Senior Manager, Risk Management",
+          "title": "Agency Operations Senior Specialist, Sales Support Activities",
           "location": "TP. Hồ Chí Minh",
-          "posted": "06/02/2026",
+          "posted": "23/03/2026",
+          "category": "sales"
+        },
+        {
+          "title": "Senior Specialist, Digital Learning Communication & Engagement",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "23/03/2026",
+          "category": "sales"
+        },
+        {
+          "title": "Claims Specialist",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "23/03/2026",
           "category": "back-office"
         },
         {
-          "title": "MANULIFE FUTURE LEADERS (M-FLs) Vietnam 2026",
+          "title": "Senior Manager, Risk Management",
           "location": "TP. Hồ Chí Minh",
-          "posted": "09/02/2026",
+          "posted": "23/03/2026",
           "category": "back-office"
         },
         {
@@ -354,27 +360,21 @@
           "category": "back-office"
         },
         {
-          "title": "Sales Manager, Bancassurance",
+          "title": "MANULIFE FUTURE LEADERS (M-FLs) Vietnam 2026",
           "location": "TP. Hồ Chí Minh",
           "posted": "09/02/2026",
           "category": "back-office"
+        },
+        {
+          "title": "Sales Manager, Bancassurance",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "09/02/2026",
+          "category": "sales"
         },
         {
           "title": "Risk & Control Assistant Manager (Partnership Distribution)",
           "location": "TP. Hồ Chí Minh",
           "posted": "09/02/2026",
-          "category": "back-office"
-        },
-        {
-          "title": "Digital Paid Media & SEO Senior Manager",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "06/03/2026",
-          "category": "back-office"
-        },
-        {
-          "title": "Assistant Manager, PD Compensation & Campaign Management",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "06/03/2026",
           "category": "back-office"
         },
         {
@@ -387,7 +387,19 @@
           "title": "Chief Product Officer",
           "location": "TP. Hồ Chí Minh",
           "posted": "09/03/2026",
-          "category": "back-office"
+          "category": "marketing"
+        },
+        {
+          "title": "Digital Paid Media & SEO Senior Manager",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "06/03/2026",
+          "category": "marketing"
+        },
+        {
+          "title": "Assistant Manager, PD Compensation & Campaign Management",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "06/03/2026",
+          "category": "sales"
         },
         {
           "title": "Customer Support Senior Associate",
@@ -396,8 +408,14 @@
           "category": "back-office"
         },
         {
+          "title": "Client & Account Specialist",
+          "location": "Hà Nội",
+          "posted": "23/03/2026",
+          "category": "back-office"
+        },
+        {
           "title": "Customer Support Analyst (Lang Son)",
-          "location": "Lang Son",
+          "location": "Lạng Sơn",
           "posted": "16/03/2026",
           "category": "back-office"
         }
@@ -410,6 +428,12 @@
       "careerUrl": "https://aia.wd3.myworkdayjobs.com/vi-VN/External?locationCountry=db69e8c8446c11de98360015c5e6daf6",
       "jobCount": 17,
       "jobs": [
+        {
+          "title": "Financial Crime and Investment Compliance, Consultant",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
         {
           "title": "Manager, Training Management and Administration",
           "location": "TP. Hồ Chí Minh",
@@ -454,12 +478,6 @@
         },
         {
           "title": "Health Ecosystem and Case Management, Consultant",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
-          "title": "Agency Growth and Transformation, Lead",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
           "category": "back-office"
@@ -559,25 +577,25 @@
           "title": "Chief Information and Digital Officer",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Chief Client & Marketing Officer",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "marketing"
         },
         {
           "title": "Area Director - ACB Account",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "sales"
         },
         {
           "title": "Associate Director, Bancassurance Quality Assurance",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "sales"
         },
         {
           "title": "Supervisor, Administration & Licensing",
@@ -589,25 +607,25 @@
           "title": "Principal Data Engineer",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Senior Quality Engineer",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Principal Developer, Digital Platforms Delivery",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Manager, Information Security and IT Governance",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Representative, Client Services",
@@ -619,7 +637,7 @@
           "title": "Account Manager",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "sales"
         },
         {
           "title": "Associate Director, Compliance",
@@ -661,7 +679,7 @@
           "title": "Associate Director, Agency Recruitment",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
-          "category": "back-office"
+          "category": "sales"
         },
         {
           "title": "Senior Manager, Business Strategy",
@@ -1111,7 +1129,7 @@
       "name": "Chubb Life",
       "color": "#1A3A6C",
       "careerUrl": "https://fa-ewgu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/jobs?location=Ho+Chi+Minh%2C+Viet+Nam&locationId=100000005999917&locationLevel=state&mode=location",
-      "jobCount": 5,
+      "jobCount": 4,
       "jobs": [
         {
           "title": "[Chubb Life] Supervisor, Business Support of the Chief Customer Officer Office (Outsourced)",
@@ -1121,12 +1139,6 @@
         },
         {
           "title": "[Chubb Life] Agency Recruitment (Outsourced)",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
-          "title": "[Chubb Life] Specialist, Event Activation (Outsourced Contract)",
           "location": "TP. Hồ Chí Minh",
           "posted": "Mới đăng",
           "category": "back-office"
@@ -1154,6 +1166,48 @@
       "jobs": [
         {
           "title": "Cơ hội nghề nghiệp",
+          "location": "Việt Nam",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "[Khối CNTT] Phó Giám đốc Trung tâm Dữ liệu và AI",
+          "location": "Việt Nam",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "[Khối Đại lý] Chuyên viên cao cấp Phát triển kinh doanh",
+          "location": "Việt Nam",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "[Khối Đại lý] Trưởng phòng Quản lý Đại lý",
+          "location": "Việt Nam",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "[Khối Đại lý] Phó Giám đốc phụ trách phát triển kinh doanh",
+          "location": "Việt Nam",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "[Khối Đại lý] Chuyên viên cao cấp Quản lý Đại lý",
+          "location": "Việt Nam",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "[Khối Đại lý] Giám đốc Phát triển kinh doanh",
+          "location": "Việt Nam",
+          "posted": "Mới đăng",
+          "category": "back-office"
+        },
+        {
+          "title": "[IT Dept.] Senior AI Engineer",
           "location": "Việt Nam",
           "posted": "Mới đăng",
           "category": "back-office"
@@ -1202,48 +1256,6 @@
         },
         {
           "title": "Data Engineer",
-          "location": "Việt Nam",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
-          "title": "Data Governance",
-          "location": "Việt Nam",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
-          "title": "[Digital] Product Owner",
-          "location": "Việt Nam",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
-          "title": "Legal Counsel",
-          "location": "Việt Nam",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
-          "title": "Chuyên viên cao cấp Phát triển Đối tác",
-          "location": "Việt Nam",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
-          "title": "Deputy Manager of Partnership Development",
-          "location": "Việt Nam",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
-          "title": "Senior English Interpreter",
-          "location": "Việt Nam",
-          "posted": "Mới đăng",
-          "category": "back-office"
-        },
-        {
-          "title": "[Văn Phòng Công Ty] Trợ Lý Ban Điều Hành",
           "location": "Việt Nam",
           "posted": "Mới đăng",
           "category": "back-office"
@@ -1395,19 +1407,37 @@
       "jobCount": 10,
       "jobs": [
         {
+          "title": "Senior Officer, Finance",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "20/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Deputy General Manager, Operations",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "13/03/2026",
+          "category": "back-office"
+        },
+        {
+          "title": "Senior Officer, Risk Management",
+          "location": "TP. Hồ Chí Minh",
+          "posted": "13/03/2026",
+          "category": "back-office"
+        },
+        {
           "title": "Manager/ Senior Manager, Agency Business",
           "location": "TP. Hồ Chí Minh",
           "posted": "04/03/2026",
-          "category": "back-office"
+          "category": "sales"
         },
         {
           "title": "Senior Specialist, Agency Support",
           "location": "TP. Hồ Chí Minh",
           "posted": "04/03/2026",
-          "category": "back-office"
+          "category": "sales"
         },
         {
-          "title": "Specialist, Policy Service (Temp)",
+          "title": "Senior Officer, Internal Audit",
           "location": "TP. Hồ Chí Minh",
           "posted": "27/02/2026",
           "category": "back-office"
@@ -1416,7 +1446,7 @@
           "title": "Specialist/Senior Specialist, Agency Compensation",
           "location": "TP. Hồ Chí Minh",
           "posted": "27/02/2026",
-          "category": "back-office"
+          "category": "sales"
         },
         {
           "title": "Officer, New Business & Underwriting",
@@ -1428,30 +1458,12 @@
           "title": "Officer, IT Service Delivery",
           "location": "TP. Hồ Chí Minh",
           "posted": "27/02/2026",
-          "category": "back-office"
+          "category": "technology"
         },
         {
           "title": "Officer, Policy Service",
           "location": "TP. Hồ Chí Minh",
           "posted": "27/02/2026",
-          "category": "back-office"
-        },
-        {
-          "title": "Senior Officer, Internal Audit",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "27/02/2026",
-          "category": "back-office"
-        },
-        {
-          "title": "Senior Specialist, PD Trainer",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "29/01/2026",
-          "category": "back-office"
-        },
-        {
-          "title": "IT Business Analyst",
-          "location": "TP. Hồ Chí Minh",
-          "posted": "28/01/2026",
           "category": "back-office"
         }
       ]
@@ -1535,7 +1547,7 @@
       "jobCount": 3,
       "jobs": [
         {
-          "title": "Deputy Sales Manager",
+          "title": "Deputy Sales Manager (Region 10)",
           "location": "Đà Nẵng",
           "posted": "Mới đăng",
           "category": "back-office"
