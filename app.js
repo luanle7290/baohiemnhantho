@@ -71,6 +71,7 @@ function getCategory(title) {
   if (!title) return '';
   const t = title.toLowerCase();
   if (t.includes('claim investigation')) return 'operations';
+  if (t.includes('compliance')) return 'legal';
   for (const [cat, { kws }] of Object.entries(CATEGORIES)) {
     if (kws.some(kw => t.includes(kw))) return cat;
   }
